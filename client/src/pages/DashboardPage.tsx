@@ -97,23 +97,25 @@ export const DashboardPage: React.FC = () => {
 
       {/* Active Journey Warning Bar (if active) */}
       {activeJourney && (
-        <div className="bg-amber-50 border-2 border-amber-300/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm animate-pulse">
+        <div className="bg-[#1a1508] border-2 border-amber-500/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg shadow-amber-950/40">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0">
-              <Navigation className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-xl bg-amber-500 text-stone-950 flex items-center justify-center shrink-0 shadow-md">
+              <Navigation className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-white text-sm">Active Journey In Progress</span>
-                <Badge variant="amber">Check-in Active</Badge>
+                <span className="font-bold text-white text-sm sm:text-base tracking-tight">Active Journey In Progress</span>
+                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/50">
+                  Check-in Active
+                </span>
               </div>
-              <p className="text-xs text-stone-200 mt-0.5">
-                Travelling to: <span className="font-semibold text-white">{activeJourney.destination}</span>
+              <p className="text-xs text-stone-300 mt-1">
+                Travelling to: <span className="font-bold text-[#00E5BE]">{activeJourney.destination}</span>
               </p>
             </div>
           </div>
           <Link to="/journey">
-            <Button size="sm" variant="gold">
+            <Button size="sm" variant="gold" className="font-bold shadow-md shadow-amber-950/50">
               Open Journey Controls →
             </Button>
           </Link>
@@ -224,7 +226,7 @@ export const DashboardPage: React.FC = () => {
                     <div className="flex items-start justify-between gap-2">
                       <h4 className="font-semibold text-white text-xs sm:text-sm">{h.title}</h4>
                       {h.isDemoData ? (
-                        <span className="text-[10px] font-medium text-stone-300 bg-stone-200/80 px-2 py-0.5 rounded-md">
+                        <span className="text-[10px] font-bold text-stone-200 bg-stone-800 border border-stone-700 px-2 py-0.5 rounded-md">
                           Demo Data
                         </span>
                       ) : (
