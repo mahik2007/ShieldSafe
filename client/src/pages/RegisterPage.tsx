@@ -32,8 +32,8 @@ export const RegisterPage: React.FC = () => {
     try {
       setLoading(true);
       await register(name, email, password);
-      // Next step after account creation -> Login / Onboarding
-      navigate('/onboarding');
+      // After registration -> Go to login page so user can authenticate
+      navigate('/login?registered=true');
     } catch (err: any) {
       setError(err.message || 'Registration failed');
     } finally {

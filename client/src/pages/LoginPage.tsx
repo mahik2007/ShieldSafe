@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Lock, ArrowRight, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Mail, Lock, ArrowRight, ShieldCheck, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/UI';
 
 export const LoginPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const justRegistered = searchParams.get('registered') === 'true';
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -51,6 +54,13 @@ export const LoginPage: React.FC = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4">
         <div className="bg-[#0d1424] py-8 px-6 sm:px-10 rounded-2xl border border-stone-800 shadow-xl shadow-black/50">
+          {justRegistered && !error && (
+            <div className="mb-6 p-3.5 rounded-xl bg-teal-950/60 border border-teal-500/40 text-teal-200 text-xs flex items-center gap-2.5">
+              <CheckCircle2 className="w-4 h-4 shrink-0 text-[#00E5BE]" />
+              <span>Account created successfully! Please sign in with your credentials.</span>
+            </div>
+          )}
+
           {error && (
             <div className="mb-6 p-3.5 rounded-xl bg-rose-950/60 border border-rose-800/80 text-rose-200 text-xs flex items-center gap-2.5">
               <AlertCircle className="w-4 h-4 shrink-0 text-rose-400" />

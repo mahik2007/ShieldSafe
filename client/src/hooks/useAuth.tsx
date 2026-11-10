@@ -58,11 +58,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (!res.ok) {
       throw new Error(data.error || 'Registration failed');
     }
-
-    setUser(data.user);
-    setToken(data.token);
-    localStorage.setItem('shecurity_user', JSON.stringify(data.user));
-    localStorage.setItem('shecurity_token', data.token);
+    // Only register the account; user will explicitly sign in
   };
 
   const logout = () => {

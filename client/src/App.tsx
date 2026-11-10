@@ -25,7 +25,7 @@ import { AboutPage } from './pages/AboutPage';
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
   if (!isAuthenticated) {
-    return <Navigate to="/register" replace />;
+    return <Navigate to="/login" replace />;
   }
   return <>{children}</>;
 };

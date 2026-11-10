@@ -64,12 +64,26 @@ export const LandingPage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3 sm:gap-4">
-            <Link to="/about" className="text-xs sm:text-sm font-medium text-stone-300 hover:text-white hidden sm:inline-block transition-colors">
+            <a
+              href="#problem-architecture"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('problem-architecture')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-xs sm:text-sm font-medium text-stone-300 hover:text-white hidden sm:inline-block transition-colors cursor-pointer"
+            >
               Problem & Architecture
-            </Link>
-            <Link to="/privacy" className="text-xs sm:text-sm font-medium text-stone-300 hover:text-white hidden sm:inline-block transition-colors">
+            </a>
+            <a
+              href="#privacy-first"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('privacy-first')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-xs sm:text-sm font-medium text-stone-300 hover:text-white hidden sm:inline-block transition-colors cursor-pointer"
+            >
               Privacy First
-            </Link>
+            </a>
             <Link to="/login">
               <Button size="sm" variant="outline" className="text-xs font-semibold">Sign In</Button>
             </Link>
@@ -159,7 +173,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Problem Statement & Innovation Match Section */}
-      <section className="py-20 bg-[#090e1a] border-b border-stone-800">
+      <section id="problem-architecture" className="py-20 bg-[#090e1a] border-b border-stone-800 scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 space-y-4">
@@ -257,11 +271,11 @@ export const LandingPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">Local Safety Map</h3>
                 <p className="text-xs sm:text-sm text-stone-300 leading-relaxed mb-4">
-                  Interactive Leaflet & OpenStreetMap platform for reporting broken streetlights, road hazards,
+                  Interactive Leaflet &amp; OpenStreetMap platform for reporting broken streetlights, road hazards,
                   pack dog sightings, and unlit alleys with community upvoting.
                 </p>
               </div>
-              <Link to="/map" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
+              <Link to="/login" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
                 Explore live map <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -272,13 +286,13 @@ export const LandingPage: React.FC = () => {
                 <div className="w-12 h-12 rounded-xl bg-[#1d1610] border border-amber-500/30 flex items-center justify-center text-amber-400 mb-5 group-hover:scale-105 transition-transform">
                   <MessageSquareWarning className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Harassment & Scam Defender</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Harassment &amp; Scam Defender</h3>
                 <p className="text-xs sm:text-sm text-stone-300 leading-relaxed mb-4">
                   Deterministic NLP analyzer identifying coercion, intimate blackmail threats,
                   phishing scams, and stalking without exposing your text to cloud providers.
                 </p>
               </div>
-              <Link to="/analyze" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
+              <Link to="/login" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
                 Test message analyzer <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -295,7 +309,7 @@ export const LandingPage: React.FC = () => {
                   cryptographic share links that guardians can view without installing an app.
                 </p>
               </div>
-              <Link to="/journey" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
+              <Link to="/login" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
                 Setup journey session <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -312,7 +326,7 @@ export const LandingPage: React.FC = () => {
                   Export instantly to structured, tamper-resistant PDF documents.
                 </p>
               </div>
-              <Link to="/incidents" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
+              <Link to="/login" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
                 Open incident manager <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -329,7 +343,7 @@ export const LandingPage: React.FC = () => {
                   cab ride verification protocols, and emergency quick-dials.
                 </p>
               </div>
-              <Link to="/safety-plan" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
+              <Link to="/login" className="text-sm font-bold text-[#00E5BE] hover:text-teal-300 flex items-center gap-1 transition-colors">
                 View safety checklist <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -343,12 +357,61 @@ export const LandingPage: React.FC = () => {
                 <h3 className="text-lg font-bold mb-2 text-white">3 Specialized Profiles</h3>
                 <p className="text-xs sm:text-sm text-stone-300 leading-relaxed mb-4">
                   Switch on the fly between <strong className="text-white">Everyday Safety</strong>, <strong className="text-white">Women's Night Commute</strong>,
-                  or <strong className="text-white">Child & Teen Guardian</strong> rulesets.
+                  or <strong className="text-white">Child &amp; Teen Guardian</strong> rulesets.
                 </p>
               </div>
-              <Link to="/onboarding" className="text-sm font-bold text-amber-300 hover:text-amber-200 flex items-center gap-1 transition-colors">
+              <Link to="/login" className="text-sm font-bold text-amber-300 hover:text-amber-200 flex items-center gap-1 transition-colors">
                 Select your safety profile <ArrowRight className="w-3.5 h-3.5" />
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy First Dedicated Section */}
+      <section id="privacy-first" className="py-20 bg-[#070a12] border-t border-stone-800 scroll-mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-950/80 text-[#00E5BE] text-xs font-bold border border-teal-500/40">
+              <Lock className="w-3.5 h-3.5" /> Privacy & Local-First Architecture
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Absolute Privacy. Zero Cloud Surveillance.
+            </h2>
+            <p className="text-stone-300 text-sm sm:text-base leading-relaxed">
+              We built SHEcurity on a strict local-first standard so you never compromise personal privacy for physical safety.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#0d1424] p-6 rounded-2xl border border-stone-800 space-y-3 shadow-md">
+              <div className="w-10 h-10 rounded-xl bg-teal-950/60 text-[#00E5BE] border border-teal-500/40 flex items-center justify-center">
+                <Server className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-white text-base">Zero External AI Transmission</h3>
+              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                The Harassment Defender is a deterministic rules engine hosted directly on your server instance. Your private chat messages, emails, and screenshots are <strong className="text-white">never</strong> transmitted to external language model APIs.
+              </p>
+            </div>
+
+            <div className="bg-[#0d1424] p-6 rounded-2xl border border-stone-800 space-y-3 shadow-md">
+              <div className="w-10 h-10 rounded-xl bg-amber-950/60 text-amber-300 border border-amber-500/40 flex items-center justify-center">
+                <EyeOff className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-white text-base">No Secret Location Tracking</h3>
+              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                GPS coordinates are requested strictly on-demand when you explicitly click "Locate Me" or initiate a Journey Guardian session. We do not run background geofencing or track you after closing the browser.
+              </p>
+            </div>
+
+            <div className="bg-[#0d1424] p-6 rounded-2xl border border-stone-800 space-y-3 shadow-md">
+              <div className="w-10 h-10 rounded-xl bg-emerald-950/60 text-emerald-300 border border-emerald-500/40 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="font-bold text-white text-base">Local-First SQLite Vault</h3>
+              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                All incident records, follow-up notes, and hazard reports reside in a self-contained local SQLite database. No external cloud databases (Firebase, AWS, Supabase) have access to your personal files.
+              </p>
             </div>
           </div>
         </div>
@@ -446,8 +509,26 @@ export const LandingPage: React.FC = () => {
               <span className="text-stone-400">Autonomous Protection & Evidence Platform</span>
             </div>
             <div className="flex items-center gap-5">
-              <Link to="/about" className="hover:text-[#00E5BE] transition-colors">About & Architecture</Link>
-              <Link to="/privacy" className="hover:text-[#00E5BE] transition-colors">Privacy First</Link>
+              <a
+                href="#problem-architecture"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('problem-architecture')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hover:text-[#00E5BE] transition-colors cursor-pointer"
+              >
+                About & Architecture
+              </a>
+              <a
+                href="#privacy-first"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('privacy-first')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hover:text-[#00E5BE] transition-colors cursor-pointer"
+              >
+                Privacy First
+              </a>
               <Link to="/register" className="text-[#00E5BE] hover:underline font-bold">Get Started →</Link>
             </div>
           </div>
