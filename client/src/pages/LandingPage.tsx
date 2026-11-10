@@ -422,30 +422,20 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Bottom Architectural Banner (HERHACK Styled Big Typography) */}
+      {/* Bottom Architectural Banner (ShieldSafe Big Typography) */}
       <footer className="relative bg-[#05070d] border-t border-stone-800/80 pt-10 pb-6 overflow-hidden select-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top metadata credits matching reference banner */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-stone-400 pb-8 border-b border-stone-800/50">
-            <div className="flex items-center gap-2">
-              <span>&copy; 2026 HERHACK. ALL RIGHTS RESERVED.</span>
-            </div>
-            <div className="text-stone-400 text-center sm:text-right">
-              Echelon Institute of Technology + IEEE Echelon Student Branch.
-            </div>
-          </div>
-
           {/* Huge Outline Typography Banner */}
           <div className="relative py-6 sm:py-10 flex justify-center items-center overflow-hidden">
-            <h1 className="text-stroke-outline text-6xl sm:text-8xl md:text-9xl lg:text-[14rem] font-black tracking-tighter leading-none pointer-events-none">
-              HERHACK
+            <h1 className="text-stroke-outline text-5xl sm:text-7xl md:text-8xl lg:text-[11rem] xl:text-[13rem] font-black tracking-tight leading-none pointer-events-none uppercase">
+              ShieldSafe
             </h1>
 
-            {/* Glowing Accent Dots matching the reference screenshot */}
-            <div className="absolute left-[8%] top-[45%] w-2 h-2 rounded-full bg-rose-500/60 blur-[1px] animate-pulse" />
-            <div className="absolute left-[38%] top-[30%] w-2.5 h-2.5 rounded-full bg-[#00E5BE]/70 blur-[1px] animate-pulse" />
-            <div className="absolute right-[32%] top-[65%] w-2 h-2 rounded-full bg-amber-400/60 blur-[1px] animate-pulse" />
-            <div className="absolute right-[18%] top-[25%] w-2.5 h-2.5 rounded-full bg-violet-400/60 blur-[1px] animate-pulse" />
+            {/* Glowing Accent Dots */}
+            <div className="absolute left-[10%] top-[45%] w-2 h-2 rounded-full bg-rose-500/60 blur-[1px] animate-pulse" />
+            <div className="absolute left-[35%] top-[30%] w-2.5 h-2.5 rounded-full bg-[#00E5BE]/70 blur-[1px] animate-pulse" />
+            <div className="absolute right-[35%] top-[65%] w-2 h-2 rounded-full bg-amber-400/60 blur-[1px] animate-pulse" />
+            <div className="absolute right-[12%] top-[25%] w-2.5 h-2.5 rounded-full bg-violet-400/60 blur-[1px] animate-pulse" />
           </div>
 
           {/* Sub navigation links */}
