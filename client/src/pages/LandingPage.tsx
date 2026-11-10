@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MapPin,
@@ -15,11 +15,37 @@ import {
   Radar,
   ShieldCheck,
   CheckCircle,
+  ChevronDown,
+  HelpCircle,
 } from 'lucide-react';
 import { Button } from '../components/UI';
 import { Logo } from '../components/Logo';
 
 export const LandingPage: React.FC = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      q: 'How does SHEcurity protect my privacy compared to commercial safety apps?',
+      a: 'Unlike traditional trackers that continuously stream your GPS location to commercial cloud servers and sell behavioral telemetry, SHEcurity operates on a local-first SQLite architecture. Your harassment message scans run on deterministic edge rules without calling public AI APIs, and Journey Guardian links are cryptographically tokenized and expire automatically.',
+    },
+    {
+      q: 'Does the Harassment Defender send my personal chats or messages to any third-party AI?',
+      a: 'Never. Our harassment detection engine runs completely deterministic, local regular expression and heuristic rules directly on your machine. No text excerpts, images, or chat logs are ever shared with third-party language models or commercial analytics vendors.',
+    },
+    {
+      q: 'How does the Journey Guardian live tracking work?',
+      a: 'When you start a commute or cab ride, you configure an expected arrival timer and select your destination. A secure, time-bounded public URL is generated that you can share with your trusted contacts. If you do not check in before the timer expires, the dashboard prompts rapid escalation with one-click SOS notifications.',
+    },
+    {
+      q: 'Can incident evidence exported from SHEcurity be used in legal or disciplinary reports?',
+      a: 'Yes. The Incident Evidence Vault organizes dates, timestamps, communication excerpts, location logs, and chronological notes into court-ready structured exports with cryptographic SHA-256 tamper-evident integrity hashes.',
+    },
+    {
+      q: 'Are community hazard reports verified before appearing on the map?',
+      a: 'Yes. Community hazard reports (such as broken streetlights, deserted poorly-lit alleys, or construction roadblocks) require threshold confirmations from nearby users before receiving verified status, preventing spam while keeping neighborhood commuters informed.',
+    },
+  ];
   return (
     <div className="min-h-screen bg-[#070a12] text-stone-100 flex flex-col font-sans selection:bg-[#00E5BE] selection:text-[#070a12]">
       {/* Top Navbar */}
@@ -328,6 +354,52 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Frequently Asked Questions (FAQ) Section */}
+      <section className="py-20 bg-[#090e1a] border-t border-stone-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/80 text-[#00E5BE] text-xs font-bold border border-teal-500/40 mb-3">
+              <HelpCircle className="w-3.5 h-3.5" /> Frequently Asked Questions
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Everything You Need to Know
+            </h2>
+            <p className="mt-3 text-stone-300 text-sm max-w-xl mx-auto">
+              How SHEcurity ensures absolute offline-first privacy, robust evidence verification, and community resilience.
+            </p>
+          </div>
+
+          <div className="space-y-3.5">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-2xl border border-stone-800 bg-[#0d1424] overflow-hidden transition-colors"
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-[#121c32] transition-colors"
+                  >
+                    <span className="font-bold text-white text-sm sm:text-base pr-2">
+                      {faq.q}
+                    </span>
+                    <span className={`p-1.5 rounded-lg bg-[#15223c] text-[#00E5BE] transition-transform duration-200 shrink-0 ${isOpen ? 'rotate-180' : ''}`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-stone-300 leading-relaxed border-t border-stone-800/60 bg-[#0b111f]/60">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Honest Boundary Notice */}
       <section className="py-16 bg-[#080d1a] border-t border-stone-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
@@ -349,6 +421,48 @@ export const LandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Bottom Architectural Banner (HERHACK Styled Big Typography) */}
+      <footer className="relative bg-[#05070d] border-t border-stone-800/80 pt-10 pb-6 overflow-hidden select-none">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top metadata credits matching reference banner */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-stone-400 pb-8 border-b border-stone-800/50">
+            <div className="flex items-center gap-2">
+              <span>&copy; 2026 HERHACK. ALL RIGHTS RESERVED.</span>
+            </div>
+            <div className="text-stone-400 text-center sm:text-right">
+              Echelon Institute of Technology + IEEE Echelon Student Branch.
+            </div>
+          </div>
+
+          {/* Huge Outline Typography Banner */}
+          <div className="relative py-6 sm:py-10 flex justify-center items-center overflow-hidden">
+            <h1 className="text-stroke-outline text-6xl sm:text-8xl md:text-9xl lg:text-[14rem] font-black tracking-tighter leading-none pointer-events-none">
+              HERHACK
+            </h1>
+
+            {/* Glowing Accent Dots matching the reference screenshot */}
+            <div className="absolute left-[8%] top-[45%] w-2 h-2 rounded-full bg-rose-500/60 blur-[1px] animate-pulse" />
+            <div className="absolute left-[38%] top-[30%] w-2.5 h-2.5 rounded-full bg-[#00E5BE]/70 blur-[1px] animate-pulse" />
+            <div className="absolute right-[32%] top-[65%] w-2 h-2 rounded-full bg-amber-400/60 blur-[1px] animate-pulse" />
+            <div className="absolute right-[18%] top-[25%] w-2.5 h-2.5 rounded-full bg-violet-400/60 blur-[1px] animate-pulse" />
+          </div>
+
+          {/* Sub navigation links */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-stone-400 border-t border-stone-800/40">
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-white">SHEcurity</span>
+              <span className="text-stone-700">•</span>
+              <span>ShieldSafe Autonomous Protection Platform</span>
+            </div>
+            <div className="flex items-center gap-5">
+              <Link to="/about" className="hover:text-[#00E5BE] transition-colors">About & Architecture</Link>
+              <Link to="/privacy" className="hover:text-[#00E5BE] transition-colors">Privacy First</Link>
+              <Link to="/register" className="text-[#00E5BE] hover:underline font-bold">Get Started →</Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

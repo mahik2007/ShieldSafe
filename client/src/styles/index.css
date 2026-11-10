@@ -36,6 +36,18 @@
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Text stroke utility for big outline footer title */
+.text-stroke-outline {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.12);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.text-stroke-outline:hover {
+  -webkit-text-stroke: 1.5px rgba(0, 229, 190, 0.35);
+  text-shadow: 0 0 30px rgba(0, 229, 190, 0.15);
+}
+
 /* Card hover physics */
 .card-hover {
   transition: box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
