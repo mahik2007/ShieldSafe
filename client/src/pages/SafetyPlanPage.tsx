@@ -83,17 +83,17 @@ export const SafetyPlanPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-200 shadow-sm print:hidden">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-800 shadow-sm print:hidden">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-stone-900 dark:text-white flex items-center gap-2">
+            <h1 className="text-2xl font-bold text-white dark:text-white flex items-center gap-2">
               <CheckSquare className="w-6 h-6 text-teal-700" /> Safety Action Planner
             </h1>
             <Badge variant="blue" className="capitalize">
               {mode} Mode
             </Badge>
           </div>
-          <p className="text-xs sm:text-sm text-stone-500 mt-1">
+          <p className="text-xs sm:text-sm text-stone-300 mt-1">
             Personalized safety habits, digital hygiene routines, and emergency preparedness.
           </p>
         </div>
@@ -103,7 +103,7 @@ export const SafetyPlanPage: React.FC = () => {
             <Printer className="w-3.5 h-3.5" /> Print / PDF
           </Button>
 
-          <Button size="sm" variant="ghost" onClick={handleReset} className="text-stone-500 gap-1.5">
+          <Button size="sm" variant="ghost" onClick={handleReset} className="text-stone-300 gap-1.5">
             <RotateCcw className="w-3.5 h-3.5" /> Reset
           </Button>
         </div>
@@ -114,14 +114,14 @@ export const SafetyPlanPage: React.FC = () => {
       {/* Progress Bar Card */}
       <Card className="print:hidden">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300">
+          <span className="text-xs font-bold uppercase tracking-wider text-stone-200 dark:text-stone-300">
             Checklist Completion Progress
           </span>
           <span className="text-sm font-extrabold text-teal-700 font-mono">
             {completedCount} / {items.length} ({progressPercent}%)
           </span>
         </div>
-        <div className="w-full bg-stone-100 h-2.5 rounded-full overflow-hidden">
+        <div className="w-full bg-[#141f33] h-2.5 rounded-full overflow-hidden">
           <div
             className="bg-teal-700 h-full rounded-full transition-all duration-300"
             style={{ width: `${progressPercent}%` }}
@@ -131,14 +131,14 @@ export const SafetyPlanPage: React.FC = () => {
 
       {/* Checklist Items Grouped */}
       {loading ? (
-        <div className="py-12 text-center text-xs text-stone-400 dark:text-stone-500">Loading checklist guidelines...</div>
+        <div className="py-12 text-center text-xs text-stone-400 dark:text-stone-300">Loading checklist guidelines...</div>
       ) : (
         <div className="space-y-4">
           {items.map((item) => (
             <Card
               key={item.id}
               className={`transition-all p-5 ${
-                item.completed ? 'bg-stone-50/70 border-stone-200' : 'hover:border-teal-400'
+                item.completed ? 'bg-[#0f172a]/70 border-stone-800' : 'hover:border-teal-400'
               }`}
             >
               <div className="flex items-start gap-3.5">
@@ -158,17 +158,17 @@ export const SafetyPlanPage: React.FC = () => {
                   <div className="flex items-center justify-between gap-2">
                     <h3
                       className={`font-bold text-sm ${
-                        item.completed ? 'line-through text-stone-400 dark:text-stone-500' : 'text-stone-900 dark:text-white'
+                        item.completed ? 'line-through text-stone-400 dark:text-stone-300' : 'text-white dark:text-white'
                       }`}
                     >
                       {item.title}
                     </h3>
-                    <span className="text-[10px] font-semibold text-stone-400 dark:text-stone-500 bg-stone-100 px-2 py-0.5 rounded-md">
+                    <span className="text-[10px] font-semibold text-stone-400 dark:text-stone-300 bg-[#141f33] px-2 py-0.5 rounded-md">
                       {item.category}
                     </span>
                   </div>
 
-                  <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">{item.description}</p>
+                  <p className="text-xs text-stone-200 dark:text-stone-300 leading-relaxed">{item.description}</p>
 
                   {/* Personal note input */}
                   <div className="pt-2 print:hidden">
@@ -178,7 +178,7 @@ export const SafetyPlanPage: React.FC = () => {
                       value={notes[item.id] || ''}
                       onChange={(e) => setNotes({ ...notes, [item.id]: e.target.value })}
                       onBlur={() => handleNoteBlur(item.id)}
-                      className="w-full text-[11px] bg-white dark:bg-[#0e1422] border border-stone-200 rounded-lg p-2 text-stone-700 dark:text-stone-200 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full text-[11px] bg-white dark:bg-[#0e1422] border border-stone-800 rounded-lg p-2 text-stone-100 dark:text-stone-200 focus:outline-none focus:ring-1 focus:ring-teal-500"
                     />
                   </div>
                 </div>
@@ -190,5 +190,6 @@ export const SafetyPlanPage: React.FC = () => {
     </div>
   );
 };
+
 
 

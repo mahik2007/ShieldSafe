@@ -140,7 +140,7 @@ export const MessageAnalyzerPage: React.FC = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Paste the received message, email, or chat excerpt here..."
-              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3.5 text-sm text-white dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
+              className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3.5 text-sm text-white dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
             />
           </div>
 
@@ -153,7 +153,7 @@ export const MessageAnalyzerPage: React.FC = () => {
               value={context}
               onChange={(e) => setContext(e.target.value)}
               placeholder="e.g. Received from unknown Instagram account, sender claims to be my manager"
-              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
+              className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
             />
           </div>
 
@@ -283,6 +283,7 @@ export const MessageAnalyzerPage: React.FC = () => {
     </div>
   );
 };
+
 
 
 

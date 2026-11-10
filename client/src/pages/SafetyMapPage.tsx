@@ -222,31 +222,35 @@ export const SafetyMapPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Top Action Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-200 shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#0d1424] p-5 rounded-2xl border border-stone-800 shadow-md">
         <div>
-          <h1 className="text-2xl font-bold text-stone-900 dark:text-white flex items-center gap-2">
-            <MapPin className="w-6 h-6 text-teal-700" /> Local Safety Map
+          <h1 className="text-2xl font-extrabold text-white flex items-center gap-2.5">
+            <MapPin className="w-6 h-6 text-[#00E5BE]" /> Local Safety Map
           </h1>
-          <p className="text-xs sm:text-sm text-stone-500 mt-1">
+          <p className="text-xs sm:text-sm text-stone-300 mt-1">
             Community-verified physical public hazards. Powered by OpenStreetMap.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           {/* Toggle Map / List */}
-          <div className="flex rounded-xl bg-stone-100 p-1 border border-stone-200">
+          <div className="flex rounded-xl bg-[#080d18] p-1 border border-stone-700">
             <button
               onClick={() => setViewMode('map')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                viewMode === 'map' ? 'bg-white dark:bg-[#0e1422] text-teal-700 shadow-sm' : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:text-white'
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                viewMode === 'map'
+                  ? 'bg-[#00E5BE] text-[#070a12] shadow-md shadow-teal-500/20'
+                  : 'text-stone-300 hover:text-white'
               }`}
             >
               <MapIcon className="w-3.5 h-3.5" /> Map View
             </button>
             <button
               onClick={() => setViewMode('list')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                viewMode === 'list' ? 'bg-white dark:bg-[#0e1422] text-teal-700 shadow-sm' : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:text-white'
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                viewMode === 'list'
+                  ? 'bg-[#00E5BE] text-[#070a12] shadow-md shadow-teal-500/20'
+                  : 'text-stone-300 hover:text-white'
               }`}
             >
               <List className="w-3.5 h-3.5" /> List View
@@ -258,7 +262,7 @@ export const SafetyMapPage: React.FC = () => {
           </Button>
 
           <Link to="/report-hazard">
-            <Button size="sm" className="gap-1.5">
+            <Button size="sm" variant="primary" className="gap-1.5 font-bold shadow-md shadow-teal-500/20">
               <Plus className="w-4 h-4" /> Report Hazard
             </Button>
           </Link>
@@ -266,17 +270,17 @@ export const SafetyMapPage: React.FC = () => {
       </div>
 
       {/* Category Filter Pills & Location Action */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white dark:bg-[#0e1422] p-4 rounded-2xl border border-stone-200">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-[#0d1424] p-4 rounded-2xl border border-stone-800">
         <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 w-full sm:w-auto">
-          <Filter className="w-4 h-4 text-stone-400 dark:text-stone-500 shrink-0 ml-1" />
+          <Filter className="w-4 h-4 text-stone-400 shrink-0 ml-1" />
           {categories.map((c) => (
             <button
               key={c.id}
               onClick={() => setSelectedCategory(c.id)}
-              className={`text-xs px-3 py-1.5 rounded-full font-medium shrink-0 transition-all ${
+              className={`text-xs px-3.5 py-1.5 rounded-full font-bold shrink-0 transition-all ${
                 selectedCategory === c.id
-                  ? 'bg-teal-700 text-white'
-                  : 'bg-stone-100 text-stone-600 dark:text-stone-300 hover:bg-stone-200'
+                  ? 'bg-[#00E5BE] text-[#070a12] shadow-md shadow-teal-500/20'
+                  : 'bg-[#141f33] text-stone-200 hover:bg-[#1c2a44] hover:text-white border border-stone-700/60'
               }`}
             >
               {c.label}
@@ -284,14 +288,14 @@ export const SafetyMapPage: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 text-xs w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 pt-2 sm:pt-0 border-stone-100">
+        <div className="flex items-center gap-3 text-xs w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 pt-2 sm:pt-0 border-stone-800">
           <button
             onClick={handleRequestLocation}
             className="text-teal-700 font-semibold hover:text-teal-900 flex items-center gap-1 cursor-pointer"
           >
             <MapPin className="w-3.5 h-3.5" /> Locate Me
           </button>
-          {locationStatus && <span className="text-stone-400 dark:text-stone-500 text-[11px]">{locationStatus}</span>}
+          {locationStatus && <span className="text-stone-400 dark:text-stone-300 text-[11px]">{locationStatus}</span>}
         </div>
       </div>
 
@@ -313,13 +317,13 @@ export const SafetyMapPage: React.FC = () => {
       {viewMode === 'map' ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Map Container */}
-          <div className="lg:col-span-2 bg-white dark:bg-[#0e1422] rounded-2xl border border-stone-200 p-2 overflow-hidden shadow-sm">
+          <div className="lg:col-span-2 bg-white dark:bg-[#0e1422] rounded-2xl border border-stone-800 p-2 overflow-hidden shadow-sm">
             <div
               ref={mapContainerRef}
-              className="w-full h-[520px] rounded-xl z-10 bg-stone-100"
+              className="w-full h-[520px] rounded-xl z-10 bg-[#141f33]"
               style={{ minHeight: '520px' }}
             />
-            <div className="p-3 text-[11px] text-stone-400 dark:text-stone-500 flex items-center justify-between">
+            <div className="p-3 text-[11px] text-stone-400 dark:text-stone-300 flex items-center justify-between">
               <span>Markers: Amber = Streetlights, Red = Dogs, Purple = Closures, Blue = Footpaths</span>
               <span>Click any marker to inspect</span>
             </div>
@@ -342,32 +346,32 @@ export const SafetyMapPage: React.FC = () => {
                     {selectedHazard.status}
                   </Badge>
                   {selectedHazard.isDemoData && (
-                    <span className="text-[10px] font-semibold text-stone-500 bg-stone-100 px-2 py-0.5 rounded-full">
+                    <span className="text-[10px] font-semibold text-stone-300 bg-[#141f33] px-2 py-0.5 rounded-full">
                       Seeded Demo
                     </span>
                   )}
                 </div>
 
-                <h3 className="font-bold text-stone-900 dark:text-white text-lg mt-3">{selectedHazard.title}</h3>
-                <p className="text-xs text-stone-500 uppercase tracking-wider font-semibold mt-1">
+                <h3 className="font-bold text-white dark:text-white text-lg mt-3">{selectedHazard.title}</h3>
+                <p className="text-xs text-stone-300 uppercase tracking-wider font-semibold mt-1">
                   Category: {selectedHazard.category.replace('-', ' ')}
                 </p>
 
-                <p className="text-sm text-stone-600 dark:text-stone-300 mt-3 leading-relaxed bg-stone-50 p-3 rounded-xl border border-stone-100">
+                <p className="text-sm text-stone-200 dark:text-stone-300 mt-3 leading-relaxed bg-[#0f172a] p-3 rounded-xl border border-stone-800">
                   {selectedHazard.description}
                 </p>
 
-                <div className="mt-4 pt-4 border-t border-stone-100 space-y-3">
-                  <div className="flex items-center justify-between text-xs text-stone-500">
+                <div className="mt-4 pt-4 border-t border-stone-800 space-y-3">
+                  <div className="flex items-center justify-between text-xs text-stone-300">
                     <span>Coordinates:</span>
-                    <span className="font-mono text-stone-700 dark:text-stone-200">
+                    <span className="font-mono text-stone-100 dark:text-stone-200">
                       {selectedHazard.latitude.toFixed(4)}, {selectedHazard.longitude.toFixed(4)}
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs text-stone-500">
+                  <div className="flex items-center justify-between text-xs text-stone-300">
                     <span>Community Confirmations:</span>
-                    <span className="font-bold text-stone-800 dark:text-stone-100">{selectedHazard.confirmationCount}</span>
+                    <span className="font-bold text-white dark:text-stone-100">{selectedHazard.confirmationCount}</span>
                   </div>
 
                   {/* Open Directions externally */}
@@ -400,9 +404,9 @@ export const SafetyMapPage: React.FC = () => {
               </Card>
             ) : (
               <Card className="text-center py-12">
-                <MapPin className="w-8 h-8 text-stone-400 dark:text-stone-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-stone-800 dark:text-stone-100 text-sm">Select a Hazard Marker</h4>
-                <p className="text-xs text-stone-500 mt-1 max-w-xs mx-auto">
+                <MapPin className="w-8 h-8 text-stone-400 dark:text-stone-200 mx-auto mb-3" />
+                <h4 className="font-semibold text-white dark:text-stone-100 text-sm">Select a Hazard Marker</h4>
+                <p className="text-xs text-stone-300 mt-1 max-w-xs mx-auto">
                   Click any marker on the map to review details, coordinates, and confirm reports.
                 </p>
               </Card>
@@ -423,7 +427,7 @@ export const SafetyMapPage: React.FC = () => {
               <Card key={h.id} className="flex flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-bold text-stone-900 dark:text-white text-base">{h.title}</h3>
+                    <h3 className="font-bold text-white dark:text-white text-base">{h.title}</h3>
                     <Badge
                       variant={
                         h.status === 'community-confirmed'
@@ -441,12 +445,12 @@ export const SafetyMapPage: React.FC = () => {
                     {h.category.replace('-', ' ')}
                   </div>
 
-                  <p className="text-xs text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">{h.description}</p>
+                  <p className="text-xs text-stone-200 dark:text-stone-300 mt-2 leading-relaxed">{h.description}</p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-                  <div className="text-xs text-stone-500">
-                    <span className="font-bold text-stone-700 dark:text-stone-200">{h.confirmationCount}</span> confirmation(s)
+                <div className="mt-4 pt-3 border-t border-stone-800 flex items-center justify-between">
+                  <div className="text-xs text-stone-300">
+                    <span className="font-bold text-stone-100 dark:text-stone-200">{h.confirmationCount}</span> confirmation(s)
                   </div>
 
                   <div className="flex items-center gap-2">
@@ -484,6 +488,7 @@ export const SafetyMapPage: React.FC = () => {
     </div>
   );
 };
+
 
 
 

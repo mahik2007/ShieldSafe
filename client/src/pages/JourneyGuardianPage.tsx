@@ -201,11 +201,11 @@ export const JourneyGuardianPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
-      <div className="bg-white dark:bg-[#0e1422] p-6 rounded-2xl border border-stone-200 shadow-sm">
-        <h1 className="text-2xl font-bold text-stone-900 dark:text-white flex items-center gap-2">
+      <div className="bg-white dark:bg-[#0e1422] p-6 rounded-2xl border border-stone-800 shadow-sm">
+        <h1 className="text-2xl font-bold text-white dark:text-white flex items-center gap-2">
           <Navigation className="w-6 h-6 text-teal-700" /> Journey Guardian
         </h1>
-        <p className="text-xs sm:text-sm text-stone-500 mt-1 max-w-2xl">
+        <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl">
           Automated check-in countdown, vehicle transit details, and secure cryptographic sharing links
           with trusted contacts. No background tracking without consent.
         </p>
@@ -239,20 +239,20 @@ export const JourneyGuardianPage: React.FC = () => {
 
           {/* Active Status Card */}
           <Card className="border-teal-200 ring-2 ring-teal-600/10">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-100">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-800">
               <div>
                 <div className="flex items-center gap-2">
                   <Badge variant="blue">In Transit</Badge>
-                  <span className="text-xs text-stone-500">ID #{activeJourney.id}</span>
+                  <span className="text-xs text-stone-300">ID #{activeJourney.id}</span>
                 </div>
-                <h2 className="text-xl font-bold text-stone-900 dark:text-white mt-1">
+                <h2 className="text-xl font-bold text-white dark:text-white mt-1">
                   {activeJourney.startLocation} → {activeJourney.destination}
                 </h2>
               </div>
 
               {/* Countdown Display */}
-              <div className="text-center sm:text-right bg-stone-50 sm:bg-transparent p-3 sm:p-0 rounded-xl">
-                <span className="text-[11px] font-semibold text-stone-400 dark:text-stone-500 block uppercase tracking-wider">
+              <div className="text-center sm:text-right bg-[#0f172a] sm:bg-transparent p-3 sm:p-0 rounded-xl">
+                <span className="text-[11px] font-semibold text-stone-400 dark:text-stone-300 block uppercase tracking-wider">
                   Next Check-In Due
                 </span>
                 <span
@@ -268,36 +268,36 @@ export const JourneyGuardianPage: React.FC = () => {
             {/* Journey Metadata */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4 text-xs">
               <div>
-                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Planned Arrival</span>
-                <span className="font-semibold text-stone-800 dark:text-stone-100">
+                <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Planned Arrival</span>
+                <span className="font-semibold text-white dark:text-stone-100">
                   {new Date(activeJourney.plannedArrivalTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </span>
               </div>
 
               <div>
-                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Ride Provider</span>
-                <span className="font-semibold text-stone-800 dark:text-stone-100">
+                <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Ride Provider</span>
+                <span className="font-semibold text-white dark:text-stone-100">
                   {activeJourney.rideProvider || 'Not specified'}
                 </span>
               </div>
 
               <div>
-                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Vehicle License</span>
-                <span className="font-semibold text-stone-800 dark:text-stone-100 font-mono">
+                <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Vehicle License</span>
+                <span className="font-semibold text-white dark:text-stone-100 font-mono">
                   {activeJourney.vehicleRegistration || 'Not specified'}
                 </span>
               </div>
 
               <div>
-                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Driver Name</span>
-                <span className="font-semibold text-stone-800 dark:text-stone-100">
+                <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Driver Name</span>
+                <span className="font-semibold text-white dark:text-stone-100">
                   {activeJourney.driverName || 'Not specified'}
                 </span>
               </div>
             </div>
 
             {/* Actions Bar */}
-            <div className="pt-4 border-t border-stone-100 flex flex-wrap items-center justify-between gap-3">
+            <div className="pt-4 border-t border-stone-800 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <Button size="sm" onClick={handleCheckIn} className="gap-1.5">
                   <CheckCircle className="w-3.5 h-3.5" /> Check In Now
@@ -315,7 +315,7 @@ export const JourneyGuardianPage: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-2">
-                <Button size="sm" variant="ghost" onClick={handleCancelJourney} className="text-stone-500">
+                <Button size="sm" variant="ghost" onClick={handleCancelJourney} className="text-stone-300">
                   Cancel Trip
                 </Button>
                 <Button size="sm" variant="outline" onClick={handleCompleteJourney} className="gap-1.5 text-emerald-700 border-emerald-300">
@@ -345,7 +345,7 @@ export const JourneyGuardianPage: React.FC = () => {
                   type="text"
                   readOnly
                   value={shareUrl}
-                  className="flex-1 bg-white dark:bg-[#0e1422] p-2.5 rounded-xl border border-teal-200 text-xs font-mono text-stone-800 dark:text-stone-100 select-all"
+                  className="flex-1 bg-white dark:bg-[#0e1422] p-2.5 rounded-xl border border-teal-200 text-xs font-mono text-white dark:text-stone-100 select-all"
                 />
                 <Button size="sm" onClick={handleCopyLink} className="gap-1">
                   <Copy className="w-3.5 h-3.5" /> Copy
@@ -359,7 +359,7 @@ export const JourneyGuardianPage: React.FC = () => {
 
               {copyStatus && <div className="text-xs font-semibold text-emerald-600 mt-2">{copyStatus}</div>}
 
-              <div className="mt-3 text-[11px] text-stone-500">
+              <div className="mt-3 text-[11px] text-stone-300">
                 Notice: If you are running on localhost, external devices cannot access this URL unless connected to your local network.
               </div>
             </Card>
@@ -369,11 +369,11 @@ export const JourneyGuardianPage: React.FC = () => {
         /* Create New Journey Form */
         <Card>
           <form onSubmit={handleStartJourney} className="space-y-5">
-            <h2 className="text-lg font-bold text-stone-900 dark:text-white">Start a New Safe Journey</h2>
+            <h2 className="text-lg font-bold text-white dark:text-white">Start a New Safe Journey</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
                   Starting Point *
                 </label>
                 <input
@@ -382,12 +382,12 @@ export const JourneyGuardianPage: React.FC = () => {
                   value={startLocation}
                   onChange={(e) => setStartLocation(e.target.value)}
                   placeholder="e.g. Office / Indiranagar 100ft Road"
-                  className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+                  className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
                   Destination *
                 </label>
                 <input
@@ -396,20 +396,20 @@ export const JourneyGuardianPage: React.FC = () => {
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
                   placeholder="e.g. Home / Koramangala 4th Block"
-                  className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+                  className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
                   Estimated Trip Duration
                 </label>
                 <select
                   value={arrivalMinutes}
                   onChange={(e) => setArrivalMinutes(parseInt(e.target.value, 10))}
-                  className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white bg-white dark:bg-[#0e1422] focus:ring-2 focus:ring-teal-600 focus:outline-none"
+                  className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white bg-white dark:bg-[#0e1422] focus:ring-2 focus:ring-teal-600 focus:outline-none"
                 >
                   <option value={15}>15 Minutes</option>
                   <option value={30}>30 Minutes</option>
@@ -421,13 +421,13 @@ export const JourneyGuardianPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
                   Check-In Alert Interval
                 </label>
                 <select
                   value={checkInInterval}
                   onChange={(e) => setCheckInInterval(parseInt(e.target.value, 10))}
-                  className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white bg-white dark:bg-[#0e1422] focus:ring-2 focus:ring-teal-600 focus:outline-none"
+                  className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white bg-white dark:bg-[#0e1422] focus:ring-2 focus:ring-teal-600 focus:outline-none"
                 >
                   <option value={10}>Every 10 Minutes</option>
                   <option value={15}>Every 15 Minutes</option>
@@ -438,48 +438,48 @@ export const JourneyGuardianPage: React.FC = () => {
             </div>
 
             {/* Optional Ride / Driver Details Section */}
-            <div className="bg-stone-50 p-4 rounded-xl border border-stone-200 space-y-3">
-              <span className="text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider block">
+            <div className="bg-[#0f172a] p-4 rounded-xl border border-stone-800 space-y-3">
+              <span className="text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider block">
                 Transit & Vehicle Details (Optional)
               </span>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <span className="text-[11px] text-stone-500 block mb-1">Provider (Uber/Ola/Auto)</span>
+                  <span className="text-[11px] text-stone-300 block mb-1">Provider (Uber/Ola/Auto)</span>
                   <input
                     type="text"
                     value={rideProvider}
                     onChange={(e) => setRideProvider(e.target.value)}
                     placeholder="e.g. Uber Auto"
-                    className="w-full rounded-lg border border-stone-300 dark:border-stone-700 p-2 text-xs bg-white dark:bg-[#0e1422] focus:outline-none focus:ring-1 focus:ring-teal-600"
+                    className="w-full rounded-lg border border-stone-700 dark:border-stone-700 p-2 text-xs bg-white dark:bg-[#0e1422] focus:outline-none focus:ring-1 focus:ring-teal-600"
                   />
                 </div>
 
                 <div>
-                  <span className="text-[11px] text-stone-500 block mb-1">Driver Name</span>
+                  <span className="text-[11px] text-stone-300 block mb-1">Driver Name</span>
                   <input
                     type="text"
                     value={driverName}
                     onChange={(e) => setDriverName(e.target.value)}
                     placeholder="e.g. Ramesh K"
-                    className="w-full rounded-lg border border-stone-300 dark:border-stone-700 p-2 text-xs bg-white dark:bg-[#0e1422] focus:outline-none focus:ring-1 focus:ring-teal-600"
+                    className="w-full rounded-lg border border-stone-700 dark:border-stone-700 p-2 text-xs bg-white dark:bg-[#0e1422] focus:outline-none focus:ring-1 focus:ring-teal-600"
                   />
                 </div>
 
                 <div>
-                  <span className="text-[11px] text-stone-500 block mb-1">License Plate</span>
+                  <span className="text-[11px] text-stone-300 block mb-1">License Plate</span>
                   <input
                     type="text"
                     value={vehicleRegistration}
                     onChange={(e) => setVehicleRegistration(e.target.value)}
                     placeholder="e.g. KA-01-AB-1234"
-                    className="w-full rounded-lg border border-stone-300 dark:border-stone-700 p-2 text-xs bg-white dark:bg-[#0e1422] font-mono focus:outline-none focus:ring-1 focus:ring-teal-600"
+                    className="w-full rounded-lg border border-stone-700 dark:border-stone-700 p-2 text-xs bg-white dark:bg-[#0e1422] font-mono focus:outline-none focus:ring-1 focus:ring-teal-600"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-4 border-t border-stone-100">
+            <div className="flex items-center justify-end gap-3 pt-4 border-t border-stone-800">
               <Button type="submit" isLoading={loading} className="gap-2 px-8">
                 <Play className="w-4 h-4 fill-white" /> Start Journey Guardian Session
               </Button>
@@ -490,5 +490,6 @@ export const JourneyGuardianPage: React.FC = () => {
     </div>
   );
 };
+
 
 

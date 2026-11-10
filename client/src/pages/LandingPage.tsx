@@ -75,10 +75,10 @@ export const LandingPage: React.FC = () => {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          {/* Hackathon problem badge */}
+          {/* Platform banner badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0d1c2b] border border-teal-500/40 text-[#00E5BE] text-xs font-bold mb-8 backdrop-blur-md shadow-lg shadow-teal-950/50 animate-float-badge">
             <span className="w-2 h-2 rounded-full bg-[#00E5BE] animate-pulse" />
-            <span>HerHackathon 2026: AI & Social Impact Solution</span>
+            <span>AI & Digital Protection: Local-First Safety Platform</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] max-w-5xl mx-auto">
@@ -352,3 +352,4 @@ export const LandingPage: React.FC = () => {
     </div>
   );
 };
+

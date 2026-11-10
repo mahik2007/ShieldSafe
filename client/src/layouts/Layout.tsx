@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, Link, Outlet, useNavigate } from 'react-router-dom';
+import { NavLink, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
   Shield,
   MapPin,
@@ -21,6 +21,7 @@ export const Layout: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { mode, setMode } = useSafetyMode();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { label: 'Dashboard', path: '/dashboard', icon: Shield, badge: 'Live' },
@@ -52,10 +53,10 @@ export const Layout: React.FC = () => {
                     Shield<span className="text-[#00E5BE]">Safe</span>
                   </span>
                   <span className="hidden sm:inline-flex items-center text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-teal-950/80 text-[#00E5BE] border border-teal-500/40">
-                    HerHackathon
+                    Live Security
                   </span>
                 </div>
-                <span className="text-[10px] text-stone-400 hidden sm:block tracking-tight">AI & Social Impact Autonomous Protection</span>
+                <span className="text-[10px] text-stone-400 hidden sm:block tracking-tight">AI Autonomous Protection & Evidence Platform</span>
               </div>
             </Link>
           </div>
@@ -119,24 +120,29 @@ export const Layout: React.FC = () => {
 
             {navItems.map((item) => {
               const Icon = item.icon;
+              const isItemActive = location.pathname === item.path;
               return (
                 <NavLink
                   key={item.path}
                   to={item.path}
-                  className={({ isActive }) =>
-                    `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
-                      isActive
-                        ? 'bg-[#00E5BE] text-[#070a12] font-bold shadow-md shadow-teal-500/20'
-                        : 'text-stone-300 hover:text-white hover:bg-stone-800/60'
-                    }`
-                  }
+                  className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
+                    isItemActive
+                      ? 'bg-[#00E5BE] text-[#070a12] font-bold shadow-md shadow-teal-500/20'
+                      : 'text-stone-300 hover:text-white hover:bg-stone-800/60'
+                  }`}
                 >
                   <div className="flex items-center gap-3">
                     <Icon className="w-4 h-4 shrink-0" />
                     <span>{item.label}</span>
                   </div>
                   {item.badge && (
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-stone-900/40 text-[#070a12]">
+                    <span
+                      className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
+                        isItemActive
+                          ? 'bg-[#070a12] text-[#00E5BE]'
+                          : 'bg-emerald-950 text-emerald-400 border border-emerald-500/40'
+                      }`}
+                    >
                       {item.badge}
                     </span>
                   )}
@@ -165,15 +171,15 @@ export const Layout: React.FC = () => {
               </button>
             </div>
 
-            {/* Hackathon Track Tag */}
+            {/* Platform Trust Tag */}
             <div className="pt-3 border-t border-stone-800 px-2">
-              <div className="p-2.5 rounded-xl bg-amber-950/30 border border-amber-900/50 text-[11px] text-amber-200 space-y-1">
+              <div className="p-2.5 rounded-xl bg-teal-950/40 border border-teal-500/30 text-[11px] text-teal-200 space-y-1">
                 <div className="font-bold flex items-center justify-between">
-                  <span>Hackathon Tracks</span>
-                  <span className="text-[9px] uppercase px-1.5 py-0.5 bg-amber-900/60 rounded font-bold text-amber-200">AI & Impact</span>
+                  <span>Privacy Architecture</span>
+                  <span className="text-[9px] uppercase px-1.5 py-0.5 bg-teal-500/20 text-[#00E5BE] rounded font-bold">Local-First</span>
                 </div>
-                <p className="text-[10px] text-amber-200/90 leading-tight">
-                  Tackling real-world women's & student safety with offline-first deterministic ML engine.
+                <p className="text-[10px] text-stone-300 leading-tight">
+                  Tackling real-world women's & student safety with an offline-first deterministic ML engine.
                 </p>
               </div>
             </div>
@@ -214,25 +220,30 @@ export const Layout: React.FC = () => {
               <div className="space-y-1 pt-1">
                 {navItems.map((item) => {
                   const Icon = item.icon;
+                  const isItemActive = location.pathname === item.path;
                   return (
                     <NavLink
                       key={item.path}
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={({ isActive }) =>
-                        `flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                          isActive
-                            ? 'bg-[#00E5BE] text-[#070a12] font-bold shadow-md'
-                            : 'text-stone-300 hover:bg-stone-800/80'
-                        }`
-                      }
+                      className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                        isItemActive
+                          ? 'bg-[#00E5BE] text-[#070a12] font-bold shadow-md'
+                          : 'text-stone-300 hover:bg-stone-800/80'
+                      }`}
                     >
                       <div className="flex items-center gap-3">
                         <Icon className="w-5 h-5 shrink-0" />
                         <span>{item.label}</span>
                       </div>
                       {item.badge && (
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-900/40 text-[#070a12]">
+                        <span
+                          className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
+                            isItemActive
+                              ? 'bg-[#070a12] text-[#00E5BE]'
+                              : 'bg-emerald-950 text-emerald-400 border border-emerald-500/40'
+                          }`}
+                        >
                           {item.badge}
                         </span>
                       )}
