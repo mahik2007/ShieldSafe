@@ -45,7 +45,7 @@ export const LoginPage: React.FC = () => {
           Sign In to SHEcurity
         </h1>
         <p className="mt-2 text-sm text-stone-300">
-          Step 2 of 3: Access your encrypted incident logs & journey controls
+          Enter your credentials to access your secure dashboard
         </p>
       </div>
 

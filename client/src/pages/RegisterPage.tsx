@@ -51,7 +51,7 @@ export const RegisterPage: React.FC = () => {
           Create Your Security Account
         </h1>
         <p className="mt-2 text-sm text-stone-300">
-          Step 1 of 3: Register your personal offline-first safety identity
+          Enter your details below to create your account
         </p>
       </div>
 
