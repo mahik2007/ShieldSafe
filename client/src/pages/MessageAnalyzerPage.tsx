@@ -91,16 +91,16 @@ export const MessageAnalyzerPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
-      <div className="bg-white dark:bg-[#0e1422] p-6 rounded-2xl border border-stone-200 shadow-sm">
+      <div className="bg-[#0d1424] dark:bg-[#0e1422] p-6 rounded-2xl border border-stone-800 shadow-sm">
         <div className="flex items-start justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-violet-700 text-xs font-semibold border border-amber-100 mb-2">
               <Shield className="w-3.5 h-3.5" /> Deterministic Rules-Based Engine
             </div>
-            <h1 className="text-2xl font-bold text-stone-900 dark:text-white flex items-center gap-2">
+            <h1 className="text-2xl font-bold text-white dark:text-white flex items-center gap-2">
               <MessageSquareWarning className="w-6 h-6 text-amber-600" /> Digital Harassment Defender
             </h1>
-            <p className="text-xs sm:text-sm text-stone-500 mt-1 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl leading-relaxed">
               Evaluate suspicious or intimidating communications for coercion, intimate material threats,
               and phishing indicators. Operates locally on your server without sending text to public AI models.
             </p>
@@ -109,8 +109,8 @@ export const MessageAnalyzerPage: React.FC = () => {
       </div>
 
       {/* Preset Fictional Samples Selector */}
-      <div className="bg-stone-100/70 p-4 rounded-2xl border border-stone-200">
-        <div className="flex items-center gap-2 mb-2 text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider">
+      <div className="bg-[#1e293b]/70 p-4 rounded-2xl border border-stone-800">
+        <div className="flex items-center gap-2 mb-2 text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider">
           <BookOpen className="w-3.5 h-3.5 text-amber-600" /> Load Fictional Demonstration Cases:
         </div>
         <div className="flex flex-wrap gap-2">
@@ -118,7 +118,7 @@ export const MessageAnalyzerPage: React.FC = () => {
             <button
               key={s.id}
               onClick={() => handleLoadSample(s)}
-              className="text-xs px-3 py-1.5 rounded-lg bg-white dark:bg-[#0e1422] border border-stone-200 text-stone-700 dark:text-stone-200 hover:border-violet-300 hover:text-violet-700 font-medium transition-all cursor-pointer"
+              className="text-xs px-3 py-1.5 rounded-lg bg-[#0d1424] dark:bg-[#0e1422] border border-stone-800 text-stone-100 dark:text-stone-200 hover:border-violet-300 hover:text-violet-700 font-medium transition-all cursor-pointer"
             >
               {s.label}
             </button>
@@ -132,7 +132,7 @@ export const MessageAnalyzerPage: React.FC = () => {
       <Card>
         <div className="space-y-4">
           <div>
-            <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
               Message Text to Evaluate *
             </label>
             <textarea
@@ -140,12 +140,12 @@ export const MessageAnalyzerPage: React.FC = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Paste the received message, email, or chat excerpt here..."
-              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3.5 text-sm text-stone-900 dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
+              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3.5 text-sm text-white dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
               Context (Optional)
             </label>
             <input
@@ -153,7 +153,7 @@ export const MessageAnalyzerPage: React.FC = () => {
               value={context}
               onChange={(e) => setContext(e.target.value)}
               placeholder="e.g. Received from unknown Instagram account, sender claims to be my manager"
-              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
+              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-amber-500 focus:outline-none"
             />
           </div>
 
@@ -210,8 +210,8 @@ export const MessageAnalyzerPage: React.FC = () => {
                 )}
 
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500">Evaluation Outcome</div>
-                  <h3 className="text-lg font-extrabold text-stone-900 dark:text-white capitalize">
+                  <div className="text-xs font-bold uppercase tracking-wider text-stone-300">Evaluation Outcome</div>
+                  <h3 className="text-lg font-extrabold text-white dark:text-white capitalize">
                     {result.severity.replace('-', ' ')} Severity
                   </h3>
                 </div>
@@ -222,7 +222,7 @@ export const MessageAnalyzerPage: React.FC = () => {
               </Button>
             </div>
 
-            <p className="mt-4 text-sm text-stone-800 dark:text-stone-100 leading-relaxed font-medium bg-white dark:bg-[#0e1422]/80 p-4 rounded-xl border border-stone-200">
+            <p className="mt-4 text-sm text-white dark:text-stone-100 leading-relaxed font-medium bg-[#0d1424] dark:bg-[#0e1422]/80 p-4 rounded-xl border border-stone-800">
               {result.summary}
             </p>
           </Card>
@@ -230,24 +230,24 @@ export const MessageAnalyzerPage: React.FC = () => {
           {/* Identified Pattern Flags */}
           {result.flags.length > 0 && (
             <div className="space-y-3">
-              <h3 className="text-sm font-bold text-stone-900 dark:text-white uppercase tracking-wider">
+              <h3 className="text-sm font-bold text-white dark:text-white uppercase tracking-wider">
                 Detected Pattern Excerpts ({result.flags.length})
               </h3>
               <div className="grid grid-cols-1 gap-3">
                 {result.flags.map((flag, idx) => (
-                  <Card key={idx} className="p-4 border-stone-200">
+                  <Card key={idx} className="p-4 border-stone-800">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-bold text-stone-900 dark:text-white text-sm">{flag.label}</span>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-100 text-stone-600 dark:text-stone-300">
+                      <span className="font-bold text-white dark:text-white text-sm">{flag.label}</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1e293b] text-stone-200 dark:text-stone-300">
                         {flag.type}
                       </span>
                     </div>
 
-                    <div className="bg-stone-50 p-2.5 rounded-lg border border-stone-200 font-mono text-xs text-rose-800 mb-2">
+                    <div className="bg-[#0f172a] p-2.5 rounded-lg border border-stone-800 font-mono text-xs text-rose-800 mb-2">
                       "{flag.excerpt}"
                     </div>
 
-                    <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">{flag.explanation}</p>
+                    <p className="text-xs text-stone-200 dark:text-stone-300 leading-relaxed">{flag.explanation}</p>
                   </Card>
                 ))}
               </div>
@@ -257,12 +257,12 @@ export const MessageAnalyzerPage: React.FC = () => {
           {/* Recommended Next Steps */}
           {result.nextSteps.length > 0 && (
             <Card>
-              <h3 className="text-sm font-bold text-stone-900 dark:text-white uppercase tracking-wider mb-3">
+              <h3 className="text-sm font-bold text-white dark:text-white uppercase tracking-wider mb-3">
                 Recommended Practical Actions
               </h3>
               <ul className="space-y-2">
                 {result.nextSteps.map((step, i) => (
-                  <li key={i} className="text-xs sm:text-sm text-stone-700 dark:text-stone-200 flex items-start gap-2.5">
+                  <li key={i} className="text-xs sm:text-sm text-stone-100 dark:text-stone-200 flex items-start gap-2.5">
                     <span className="w-5 h-5 rounded-full bg-teal-50 text-teal-800 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                       {i + 1}
                     </span>
@@ -274,8 +274,8 @@ export const MessageAnalyzerPage: React.FC = () => {
           )}
 
           {/* Engine Disclaimer */}
-          <div className="p-4 rounded-2xl bg-stone-100 text-[11px] text-stone-500 leading-relaxed flex items-start gap-2.5">
-            <Info className="w-4 h-4 text-stone-400 dark:text-stone-500 shrink-0 mt-0.5" />
+          <div className="p-4 rounded-2xl bg-[#1e293b] text-[11px] text-stone-300 leading-relaxed flex items-start gap-2.5">
+            <Info className="w-4 h-4 text-stone-300 dark:text-stone-300 shrink-0 mt-0.5" />
             <span>{result.disclaimer}</span>
           </div>
         </div>
@@ -283,5 +283,6 @@ export const MessageAnalyzerPage: React.FC = () => {
     </div>
   );
 };
+
 
 

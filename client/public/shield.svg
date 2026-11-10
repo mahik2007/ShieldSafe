@@ -1,56 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <!-- Dark rich background for crisp contrast -->
-    <rect id="bg" width="64" height="64" rx="16" fill="#0b0f17"/>
-    
-    <!-- Neon cyan / electric blue glow on left -->
-    <linearGradient id="cyanSide" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="50%" stop-color="#0284c7"/>
-      <stop offset="100%" stop-color="#0369a1"/>
-    </linearGradient>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
+  <!-- Outer Teal Shield Border -->
+  <path d="M50 115 L20 85 C14 72 12 55 12 35 L50 15 L88 35 C88 55 86 72 80 85 Z" 
+        fill="#00E5BE" />
 
-    <!-- Neon magenta / hot violet glow on right -->
-    <linearGradient id="magentaSide" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f43f5e"/>
-      <stop offset="50%" stop-color="#e11d48"/>
-      <stop offset="100%" stop-color="#be123c"/>
-    </linearGradient>
+  <!-- Inner Dark Shield Recess -->
+  <path d="M50 105 L25 79 C20 68 18 53 18 37 L50 21 L82 37 C82 53 80 68 75 79 Z" 
+        fill="#0B131D" />
 
-    <!-- Outer neon ring glow -->
-    <linearGradient id="splitGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f2fe"/>
-      <stop offset="48%" stop-color="#38bdf8"/>
-      <stop offset="52%" stop-color="#f43f5e"/>
-      <stop offset="100%" stop-color="#fb7185"/>
-    </linearGradient>
+  <!-- Bottom Accent Wedge (Teal) -->
+  <path d="M30 68 L48 76 L40 85 L28 78 Z" 
+        fill="#00C49F" />
 
-    <!-- Inner dark shield fill -->
-    <linearGradient id="innerShield" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#111827"/>
-      <stop offset="100%" stop-color="#070a12"/>
-    </linearGradient>
-  </defs>
+  <!-- Bottom Accent Wedge (Amber / Orange) -->
+  <path d="M42 87 L58 80 L62 90 L48 95 Z" 
+        fill="#FFA500" />
 
-  <!-- Container Base -->
-  <rect width="64" height="64" rx="16" fill="#090d16" stroke="#1f293d" stroke-width="1.5"/>
-
-  <!-- Outer Neon Halo -->
-  <path d="M32 54s17-8.5 17-23.5V13L32 6.5 15 13v17.5C15 45.5 32 54 32 54z"
-        stroke="url(#splitGlow)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
-
-  <!-- Inner Dark Shield Body -->
-  <path d="M32 50.5s14-7 14-19.5V16.5L32 11 18 16.5V31c0 12.5 14 19.5 14 19.5z"
-        fill="url(#innerShield)"/>
-
-  <!-- Left Half Blue/Cyan Tint -->
-  <path d="M32 11L18 16.5V31c0 12.5 14 19.5 14 19.5V11z"
-        fill="#0284c7" fill-opacity="0.25"/>
-
-  <!-- Right Half Pink/Magenta Tint -->
-  <path d="M32 11L46 16.5V31c0 12.5-14 19.5-14 19.5V11z"
-        fill="#f43f5e" fill-opacity="0.18"/>
-
-  <!-- Center Split Neon Seam -->
-  <line x1="32" y1="9" x2="32" y2="52" stroke="#67e8f9" stroke-width="1.75" stroke-linecap="round"/>
+  <!-- Big Stylized 'S' in Clean White -->
+  <path d="M52 32 C62 32 72 37 72 48 L56 48 C56 43 52 42 47 42 C40 42 36 45 36 51 C36 58 42 61 54 64 C68 67 76 72 76 84 C76 96 66 102 50 102 C36 102 26 95 25 82 L42 82 C43 89 47 91 52 91 C58 91 61 88 61 83 C61 77 56 74 44 71 C30 67 22 62 22 50 C22 39 33 32 52 32 Z" 
+        fill="#FFFFFF" />
 </svg>

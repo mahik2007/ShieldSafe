@@ -5,21 +5,30 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
   body {
-    @apply bg-stone-50 text-stone-900 antialiased selection:bg-teal-700 selection:text-white;
+    background-color: #070a12;
+    color: #f5f5f4;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
 /* Custom styles for Leaflet markers and popups */
 .leaflet-popup-content-wrapper {
-  @apply rounded-xl shadow-xl border border-stone-100 p-1 text-stone-800 font-sans;
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  padding: 4px !important;
+  font-family: inherit !important;
 }
 
 .leaflet-popup-tip {
-  @apply bg-white;
+  background: #0f172a !important;
 }
 
 /* Smooth transitions */
@@ -27,12 +36,12 @@
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Premium card hover glow */
+/* Card hover physics */
 .card-hover {
   transition: box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-hover:hover {
-  box-shadow: 0 12px 36px -6px rgba(15, 118, 110, 0.16), 0 4px 12px -2px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 36px -6px rgba(0, 229, 190, 0.15), 0 4px 12px -2px rgba(0,0,0,0.5);
   transform: translateY(-2px);
 }
 
@@ -40,7 +49,7 @@
 @keyframes pulseGlow {
   0%, 100% {
     transform: scale(1) translate(0px, 0px);
-    opacity: 0.15;
+    opacity: 0.18;
   }
   50% {
     transform: scale(1.08) translate(15px, -10px);
@@ -51,7 +60,7 @@
 @keyframes pulseGlowReverse {
   0%, 100% {
     transform: scale(1) translate(0px, 0px);
-    opacity: 0.12;
+    opacity: 0.14;
   }
   50% {
     transform: scale(1.1) translate(-15px, 12px);
@@ -80,33 +89,18 @@
   animation: floatBadge 3.5s ease-in-out infinite;
 }
 
-/* Glassmorphism utility */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-.glass-panel-dark {
-  background: rgba(10, 22, 40, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 /* Custom sleek scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #fafaf9;
+  background: #070a12;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d6d3d1;
+  background: #1e293b;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0f766e;
+  background: #00E5BE;
 }
