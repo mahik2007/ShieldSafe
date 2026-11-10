@@ -42,7 +42,7 @@ export const SharedJourneyView: React.FC = () => {
         <div className="w-12 h-12 rounded-2xl bg-teal-700 flex items-center justify-center text-white mx-auto shadow-md shadow-teal-200 mb-4">
           <Shield className="w-6 h-6" />
         </div>
-        <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+        <h1 className="text-2xl font-extrabold text-stone-900 dark:text-white tracking-tight">
           ShieldSafe Journey Guardian
         </h1>
         <p className="mt-1 text-xs text-stone-500">
@@ -52,13 +52,13 @@ export const SharedJourneyView: React.FC = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
         {loading && !journey ? (
-          <Card className="text-center py-12 text-xs text-slate-400">
+          <Card className="text-center py-12 text-xs text-stone-400 dark:text-stone-500">
             Fetching verified journey status...
           </Card>
         ) : error ? (
           <Card className="text-center py-10 space-y-3">
             <AlertTriangle className="w-8 h-8 text-rose-500 mx-auto" />
-            <h3 className="font-bold text-slate-800 text-sm">Link Expired or Inactive</h3>
+            <h3 className="font-bold text-stone-800 dark:text-stone-100 text-sm">Link Expired or Inactive</h3>
             <p className="text-xs text-stone-500 max-w-xs mx-auto">{error}</p>
           </Card>
         ) : journey ? (
@@ -81,23 +81,23 @@ export const SharedJourneyView: React.FC = () => {
             </div>
 
             <div>
-              <span className="text-[11px] text-slate-400 font-medium block">Route</span>
-              <h2 className="text-base font-bold text-slate-900 mt-0.5">
+              <span className="text-[11px] text-stone-400 dark:text-stone-500 font-medium block">Route</span>
+              <h2 className="text-base font-bold text-stone-900 dark:text-white mt-0.5">
                 {journey.startLocation} → {journey.destination}
               </h2>
             </div>
 
             <div className="grid grid-cols-2 gap-3 bg-stone-50 p-3.5 rounded-xl border border-stone-200 text-xs">
               <div>
-                <span className="text-slate-400 block mb-0.5">Planned Arrival</span>
-                <span className="font-semibold text-slate-800">
+                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Planned Arrival</span>
+                <span className="font-semibold text-stone-800 dark:text-stone-100">
                   {new Date(journey.plannedArrivalTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </span>
               </div>
 
               <div>
-                <span className="text-slate-400 block mb-0.5">Last Check-in</span>
-                <span className="font-semibold text-slate-800">
+                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Last Check-in</span>
+                <span className="font-semibold text-stone-800 dark:text-stone-100">
                   {journey.lastCheckIn
                     ? new Date(journey.lastCheckIn).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
                     : 'Awaiting first'}
@@ -105,15 +105,15 @@ export const SharedJourneyView: React.FC = () => {
               </div>
 
               <div>
-                <span className="text-slate-400 block mb-0.5">Vehicle / License</span>
-                <span className="font-semibold font-mono text-slate-800">
+                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Vehicle / License</span>
+                <span className="font-semibold font-mono text-stone-800 dark:text-stone-100">
                   {journey.vehicleRegistration || 'Not provided'}
                 </span>
               </div>
 
               <div>
-                <span className="text-slate-400 block mb-0.5">Ride Provider</span>
-                <span className="font-semibold text-slate-800">
+                <span className="text-stone-400 dark:text-stone-500 block mb-0.5">Ride Provider</span>
+                <span className="font-semibold text-stone-800 dark:text-stone-100">
                   {journey.rideProvider || 'Direct Commute'}
                 </span>
               </div>
@@ -124,7 +124,7 @@ export const SharedJourneyView: React.FC = () => {
               <span>This trip is currently monitored. This link refreshes automatically.</span>
             </div>
 
-            <div className="text-[11px] text-slate-400 text-center">
+            <div className="text-[11px] text-stone-400 dark:text-stone-500 text-center">
               Shared securely via ShieldSafe. No personal account or login required.
             </div>
           </Card>
@@ -133,4 +133,5 @@ export const SharedJourneyView: React.FC = () => {
     </div>
   );
 };
+
 

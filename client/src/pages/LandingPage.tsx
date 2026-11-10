@@ -30,7 +30,7 @@ export const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-stone-50 dark:bg-[#070a12] flex flex-col font-sans selection:bg-teal-700 selection:text-white transition-colors duration-200">
       {/* Top Navbar */}
-      <header className="sticky top-0 z-40 bg-white/90 dark:bg-[#0a0f1d]/90 backdrop-blur-md border-b border-stone-200/90 dark:border-stone-800/80 shadow-sm transition-all">
+      <header className="sticky top-0 z-40 bg-white dark:bg-[#0e1422]/90 dark:bg-[#0a0f1d]/90 backdrop-blur-md border-b border-stone-200/90 dark:border-stone-800/80 shadow-sm transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2.5 group">
@@ -108,7 +108,7 @@ export const LandingPage: React.FC = () => {
               </Button>
             </Link>
             <Link to="/dashboard" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 py-4 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30 backdrop-blur-sm">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 py-4 bg-white dark:bg-[#0e1422]/10 border-white/20 text-white hover:bg-white dark:bg-[#0e1422]/20 hover:border-white/30 backdrop-blur-sm">
                 Explore Demo Dashboard
               </Button>
             </Link>
@@ -116,22 +116,22 @@ export const LandingPage: React.FC = () => {
 
           {/* Real-world Evaluation Criteria Match */}
           <div className="mt-16 pt-8 border-t border-white/10 max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-stone-300 font-medium">
-            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/10">
+            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-[#0e1422]/5 border border-white/10">
               <Cpu className="w-5 h-5 text-teal-400 mb-1.5" />
               <span className="font-semibold text-white">Edge AI Rules Engine</span>
               <span className="text-[10px] text-stone-400 mt-0.5">Deterministic NLP detection</span>
             </div>
-            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/10">
+            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-[#0e1422]/5 border border-white/10">
               <Server className="w-5 h-5 text-teal-400 mb-1.5" />
               <span className="font-semibold text-white">Local-First SQLite</span>
               <span className="text-[10px] text-stone-400 mt-0.5">Zero data leaks or telemetry</span>
             </div>
-            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/10">
+            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-[#0e1422]/5 border border-white/10">
               <Lock className="w-5 h-5 text-teal-400 mb-1.5" />
               <span className="font-semibold text-white">Court-Ready PDF Vault</span>
               <span className="text-[10px] text-stone-400 mt-0.5">Cryptographic incident logs</span>
             </div>
-            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white/5 border border-white/10">
+            <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-white dark:bg-[#0e1422]/5 border border-white/10">
               <Radar className="w-5 h-5 text-teal-400 mb-1.5" />
               <span className="font-semibold text-white">Crowd Hazard Alerts</span>
               <span className="text-[10px] text-stone-400 mt-0.5">Community verified safety</span>
@@ -319,7 +319,7 @@ export const LandingPage: React.FC = () => {
             {/* Card 6: Profile Mode Highlight */}
             <div className="bg-gradient-to-br from-teal-900 via-teal-950 to-stone-950 text-white rounded-2xl border border-teal-800 shadow-brand ring-1 ring-teal-700/30 p-6 card-hover flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-amber-300 mb-5">
+                <div className="w-12 h-12 rounded-xl bg-white dark:bg-[#0e1422]/10 flex items-center justify-center text-amber-300 mb-5">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">3 Specialized Profiles</h3>
@@ -360,3 +360,5 @@ export const LandingPage: React.FC = () => {
     </div>
   );
 };
+
+

@@ -6,7 +6,7 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header Banner */}
-      <div className="bg-white p-6 sm:p-8 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
+      <div className="bg-white dark:bg-[#0e1422] p-6 sm:p-8 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 text-teal-800 text-xs font-bold border border-teal-200 mb-3">
@@ -142,3 +142,4 @@ export const AboutPage: React.FC = () => {
     </div>
   );
 };
+

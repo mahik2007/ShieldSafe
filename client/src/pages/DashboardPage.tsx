@@ -82,7 +82,7 @@ export const DashboardPage: React.FC = () => {
       {/* Welcome & Profile Header */}
       <div className="bg-gradient-to-r from-teal-900 via-teal-800 to-teal-950 rounded-3xl p-6 sm:p-8 text-white shadow-brand relative overflow-hidden ring-1 ring-teal-700/30">
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-teal-200 text-xs font-semibold backdrop-blur-sm border border-white/10 mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#0e1422]/10 text-teal-200 text-xs font-semibold backdrop-blur-sm border border-white/10 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             {currentHeader.badge}
           </div>
@@ -173,25 +173,25 @@ export const DashboardPage: React.FC = () => {
 
       {/* Overview Stats Bar */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
+        <div className="bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Logged Hazards</div>
           <div className="text-2xl font-black text-stone-900 mt-1">{stats.totalHazards}</div>
           <div className="text-[11px] text-stone-400 mt-1">Open public reports</div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
+        <div className="bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Saved Incidents</div>
           <div className="text-2xl font-black text-stone-900 mt-1">{stats.totalIncidents}</div>
           <div className="text-[11px] text-stone-400 mt-1">Preserved timelines</div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
+        <div className="bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Active Trips</div>
           <div className="text-2xl font-black text-stone-900 mt-1">{stats.activeJourneys}</div>
           <div className="text-[11px] text-stone-400 mt-1">Journey Guardian sessions</div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
+        <div className="bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Checklist Progress</div>
           <div className="text-2xl font-black text-teal-700 mt-1">{stats.checklistProgress.percentage}%</div>
           <div className="text-[11px] text-stone-400 mt-1">{stats.checklistProgress.completed} of {stats.checklistProgress.total} completed</div>
@@ -329,4 +329,5 @@ export const DashboardPage: React.FC = () => {
     </div>
   );
 };
+
 

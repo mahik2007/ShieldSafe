@@ -21,9 +21,9 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* Container Base matching the exact dual-split neon shield */}
+      {/* Container Base: Elegant in both light (stone-100 with border) and dark (deep navy with glow) */}
       <div
-        className={`${currentSize.box} bg-[#090d16] border border-cyan-900/40 flex items-center justify-center shadow-lg shadow-cyan-950/50 text-white transition-all duration-300 group-hover:scale-105 shrink-0 relative overflow-hidden ring-1 ring-white/5`}
+        className={`${currentSize.box} bg-white dark:bg-[#090d16] border border-stone-200 dark:border-cyan-900/40 flex items-center justify-center shadow-md shadow-stone-200/50 dark:shadow-cyan-950/60 text-white transition-all duration-300 group-hover:scale-105 shrink-0 relative overflow-hidden ring-1 ring-black/5 dark:ring-white/5`}
       >
         <svg
           className={`${currentSize.icon}`}
@@ -33,10 +33,10 @@ export const Logo: React.FC<LogoProps> = ({
         >
           <defs>
             <linearGradient id="neonSplit" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#00f2fe" />
-              <stop offset="48%" stopColor="#38bdf8" />
-              <stop offset="52%" stopColor="#f43f5e" />
-              <stop offset="100%" stopColor="#fb7185" />
+              <stop offset="0%" stopColor="#0284c7" />
+              <stop offset="48%" stopColor="#0ea5e9" />
+              <stop offset="52%" stopColor="#e11d48" />
+              <stop offset="100%" stopColor="#f43f5e" />
             </linearGradient>
           </defs>
 
@@ -44,7 +44,7 @@ export const Logo: React.FC<LogoProps> = ({
           <path
             d="M24 42s13-6.5 13-18V10L24 5 11 10v14c0 11.5 13 18 13 18z"
             stroke="url(#neonSplit)"
-            strokeWidth="2.5"
+            strokeWidth="2.75"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -53,7 +53,7 @@ export const Logo: React.FC<LogoProps> = ({
           <path
             d="M24 8.5L13.5 12.5V24c0 9 10.5 14.5 10.5 14.5V8.5z"
             fill="#0284c7"
-            fillOpacity="0.32"
+            fillOpacity="0.28"
           />
 
           {/* Right Magenta Half */}
@@ -69,8 +69,8 @@ export const Logo: React.FC<LogoProps> = ({
             y1="7"
             x2="24"
             y2="40"
-            stroke="#67e8f9"
-            strokeWidth="1.5"
+            stroke="#0ea5e9"
+            strokeWidth="1.75"
             strokeLinecap="round"
           />
         </svg>
@@ -78,7 +78,7 @@ export const Logo: React.FC<LogoProps> = ({
 
       {showText && (
         <span className={`font-extrabold ${currentSize.text} text-stone-900 dark:text-white tracking-tight leading-none`}>
-          Shield<span className="text-teal-600 dark:text-teal-400">Safe</span>
+          Shield<span className="text-teal-700 dark:text-teal-400">Safe</span>
         </span>
       )}
     </div>

@@ -90,8 +90,8 @@ export const OnboardingPage: React.FC = () => {
                 onClick={() => setSelected(m.id)}
                 className={`relative rounded-2xl p-6 cursor-pointer border-2 transition-all ring-1 ${
                   isSelected
-                    ? 'border-teal-600 bg-white shadow-brand ring-teal-600/10'
-                    : 'border-stone-200 bg-white hover:border-stone-300 ring-black/5 hover:shadow-card'
+                    ? 'border-teal-600 bg-white dark:bg-[#0e1422] shadow-brand ring-teal-600/10'
+                    : 'border-stone-200 bg-white dark:bg-[#0e1422] hover:border-stone-300 ring-black/5 hover:shadow-card'
                 }`}
               >
                 <div className="flex items-start justify-between">
@@ -132,7 +132,7 @@ export const OnboardingPage: React.FC = () => {
           })}
         </div>
 
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white dark:bg-[#0e1422] p-6 rounded-2xl border border-stone-200 shadow-card ring-1 ring-black/5">
           <div className="text-xs text-stone-500">
             Selected: <span className="font-semibold text-stone-800">{modes.find(m => m.id === selected)?.title}</span>
           </div>
@@ -159,4 +159,5 @@ export const OnboardingPage: React.FC = () => {
     </div>
   );
 };
+
 

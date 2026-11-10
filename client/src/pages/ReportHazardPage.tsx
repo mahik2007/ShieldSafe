@@ -94,7 +94,7 @@ export const ReportHazardPage: React.FC = () => {
           <ArrowLeft className="w-4 h-4" />
         </Button>
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <h1 className="text-2xl font-bold text-stone-900 dark:text-white flex items-center gap-2">
             <AlertTriangle className="w-6 h-6 text-amber-500" /> Report Public Hazard
           </h1>
           <p className="text-xs sm:text-sm text-stone-500">
@@ -115,13 +115,13 @@ export const ReportHazardPage: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Category */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
               Hazard Category *
             </label>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full rounded-xl border border-slate-300 p-3 text-sm text-slate-900 bg-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white bg-white dark:bg-[#0e1422] focus:ring-2 focus:ring-teal-600 focus:outline-none"
             >
               <option value="broken-streetlight">Broken / Non-functional Streetlight</option>
               <option value="road-construction">Road Construction / Open Trench</option>
@@ -134,7 +134,7 @@ export const ReportHazardPage: React.FC = () => {
 
           {/* Title */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
               Report Title *
             </label>
             <input
@@ -143,13 +143,13 @@ export const ReportHazardPage: React.FC = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Broken streetlamps between 12th Main and Trinity station"
-              className="w-full rounded-xl border border-slate-300 p-3 text-sm text-slate-900 focus:ring-2 focus:ring-teal-600 focus:outline-none"
+              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
             />
           </div>
 
           {/* Description */}
           <div>
-            <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider mb-2">
               Detailed Description *
             </label>
             <textarea
@@ -158,14 +158,14 @@ export const ReportHazardPage: React.FC = () => {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Provide objective visual details (e.g. two poles unlit, pitch black sidewalk after 8 PM, forced onto active road). Do not accuse specific named individuals."
-              className="w-full rounded-xl border border-slate-300 p-3 text-sm text-slate-900 focus:ring-2 focus:ring-teal-600 focus:outline-none"
+              className="w-full rounded-xl border border-stone-300 dark:border-stone-700 p-3 text-sm text-stone-900 dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
             />
           </div>
 
           {/* Coordinates & Browser Locate */}
           <div className="bg-stone-50 p-4 rounded-xl border border-stone-200 space-y-3">
             <div className="flex items-center justify-between">
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-stone-700 dark:text-stone-200 uppercase tracking-wider">
                 Geographic Coordinates
               </label>
               <button
@@ -188,7 +188,7 @@ export const ReportHazardPage: React.FC = () => {
                   value={latitude}
                   onChange={(e) => setLatitude(e.target.value)}
                   placeholder="12.9716"
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono text-slate-900 focus:outline-none focus:ring-1 focus:ring-teal-600 bg-white"
+                  className="w-full rounded-lg border border-stone-300 dark:border-stone-700 p-2.5 text-xs font-mono text-stone-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-teal-600 bg-white dark:bg-[#0e1422]"
                 />
               </div>
               <div>
@@ -199,11 +199,11 @@ export const ReportHazardPage: React.FC = () => {
                   value={longitude}
                   onChange={(e) => setLongitude(e.target.value)}
                   placeholder="77.5946"
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono text-slate-900 focus:outline-none focus:ring-1 focus:ring-teal-600 bg-white"
+                  className="w-full rounded-lg border border-stone-300 dark:border-stone-700 p-2.5 text-xs font-mono text-stone-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-teal-600 bg-white dark:bg-[#0e1422]"
                 />
               </div>
             </div>
-            <p className="text-[11px] text-slate-400">
+            <p className="text-[11px] text-stone-400 dark:text-stone-500">
               Defaults to central demonstration coordinates if GPS is unavailable.
             </p>
           </div>
@@ -232,4 +232,5 @@ export const ReportHazardPage: React.FC = () => {
     </div>
   );
 };
+
 

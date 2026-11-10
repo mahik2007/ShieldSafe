@@ -83,10 +83,10 @@ export const SafetyPlanPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-stone-200 shadow-sm print:hidden">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-200 shadow-sm print:hidden">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+            <h1 className="text-2xl font-bold text-stone-900 dark:text-white flex items-center gap-2">
               <CheckSquare className="w-6 h-6 text-teal-700" /> Safety Action Planner
             </h1>
             <Badge variant="blue" className="capitalize">
@@ -114,7 +114,7 @@ export const SafetyPlanPage: React.FC = () => {
       {/* Progress Bar Card */}
       <Card className="print:hidden">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-600">
+          <span className="text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300">
             Checklist Completion Progress
           </span>
           <span className="text-sm font-extrabold text-teal-700 font-mono">
@@ -131,7 +131,7 @@ export const SafetyPlanPage: React.FC = () => {
 
       {/* Checklist Items Grouped */}
       {loading ? (
-        <div className="py-12 text-center text-xs text-slate-400">Loading checklist guidelines...</div>
+        <div className="py-12 text-center text-xs text-stone-400 dark:text-stone-500">Loading checklist guidelines...</div>
       ) : (
         <div className="space-y-4">
           {items.map((item) => (
@@ -158,17 +158,17 @@ export const SafetyPlanPage: React.FC = () => {
                   <div className="flex items-center justify-between gap-2">
                     <h3
                       className={`font-bold text-sm ${
-                        item.completed ? 'line-through text-slate-400' : 'text-slate-900'
+                        item.completed ? 'line-through text-stone-400 dark:text-stone-500' : 'text-stone-900 dark:text-white'
                       }`}
                     >
                       {item.title}
                     </h3>
-                    <span className="text-[10px] font-semibold text-slate-400 bg-stone-100 px-2 py-0.5 rounded-md">
+                    <span className="text-[10px] font-semibold text-stone-400 dark:text-stone-500 bg-stone-100 px-2 py-0.5 rounded-md">
                       {item.category}
                     </span>
                   </div>
 
-                  <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
+                  <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">{item.description}</p>
 
                   {/* Personal note input */}
                   <div className="pt-2 print:hidden">
@@ -178,7 +178,7 @@ export const SafetyPlanPage: React.FC = () => {
                       value={notes[item.id] || ''}
                       onChange={(e) => setNotes({ ...notes, [item.id]: e.target.value })}
                       onBlur={() => handleNoteBlur(item.id)}
-                      className="w-full text-[11px] bg-white border border-stone-200 rounded-lg p-2 text-slate-700 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full text-[11px] bg-white dark:bg-[#0e1422] border border-stone-200 rounded-lg p-2 text-stone-700 dark:text-stone-200 focus:outline-none focus:ring-1 focus:ring-teal-500"
                     />
                   </div>
                 </div>
@@ -190,4 +190,5 @@ export const SafetyPlanPage: React.FC = () => {
     </div>
   );
 };
+
 
