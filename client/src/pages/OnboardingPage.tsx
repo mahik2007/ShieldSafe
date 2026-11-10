@@ -101,7 +101,7 @@ export const OnboardingPage: React.FC = () => {
                       <div className="flex items-center gap-2.5">
                         <h3 className="font-bold text-white text-base sm:text-lg">{m.title}</h3>
                         {m.badge && (
-                          <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                          <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-950/400/20 text-amber-300 border border-amber-500/40">
                             {m.badge}
                           </span>
                         )}

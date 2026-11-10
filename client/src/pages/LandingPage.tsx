@@ -44,12 +44,12 @@ export const LandingPage: React.FC = () => {
             <Link to="/privacy" className="text-xs sm:text-sm font-medium text-stone-300 hover:text-white hidden sm:inline-block transition-colors">
               Privacy First
             </Link>
-            <Link to="/dashboard">
-              <Button size="sm" variant="outline" className="text-xs">Dashboard</Button>
+            <Link to="/login">
+              <Button size="sm" variant="outline" className="text-xs font-semibold">Sign In</Button>
             </Link>
-            <Link to="/onboarding">
+            <Link to="/register">
               <Button size="sm" variant="primary" className="text-xs font-bold shadow-md shadow-teal-500/20">
-                Launch App →
+                Create Account →
               </Button>
             </Link>
           </div>
@@ -63,7 +63,7 @@ export const LandingPage: React.FC = () => {
         
         {/* Animated glowing orbs matching new teal & amber accents */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#00E5BE]/15 rounded-full blur-[140px] pointer-events-none animate-glow-1" />
-        <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none animate-glow-2" />
+        <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-amber-950/400/10 rounded-full blur-[140px] pointer-events-none animate-glow-2" />
         
         {/* Subtle geometric grid backdrop */}
         <div
@@ -94,14 +94,14 @@ export const LandingPage: React.FC = () => {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
-            <Link to="/onboarding" className="w-full sm:w-auto">
+            <Link to="/register" className="w-full sm:w-auto">
               <Button size="lg" variant="primary" className="w-full sm:w-auto gap-2 text-base px-9 py-4 font-bold shadow-xl shadow-teal-500/20 hover:scale-[1.02] transition-transform">
-                Start Safe Journey <ArrowRight className="w-5 h-5" />
+                Create Account & Get Started <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/dashboard" className="w-full sm:w-auto">
+            <Link to="/login" className="w-full sm:w-auto">
               <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 py-4 bg-[#0d1424] border-stone-700 text-white hover:bg-[#131d33] hover:border-teal-400/50">
-                Explore Demo Dashboard
+                Sign In to Existing Account
               </Button>
             </Link>
           </div>

@@ -291,7 +291,7 @@ export const SafetyMapPage: React.FC = () => {
         <div className="flex items-center gap-3 text-xs w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 pt-2 sm:pt-0 border-stone-800">
           <button
             onClick={handleRequestLocation}
-            className="text-teal-700 font-semibold hover:text-teal-900 flex items-center gap-1 cursor-pointer"
+            className="text-[#00E5BE] font-semibold hover:text-teal-300 flex items-center gap-1 cursor-pointer"
           >
             <MapPin className="w-3.5 h-3.5" /> Locate Me
           </button>
@@ -317,7 +317,7 @@ export const SafetyMapPage: React.FC = () => {
       {viewMode === 'map' ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Map Container */}
-          <div className="lg:col-span-2 bg-white dark:bg-[#0e1422] rounded-2xl border border-stone-800 p-2 overflow-hidden shadow-sm">
+          <div className="lg:col-span-2 bg-[#0d1424] rounded-2xl border border-stone-800 p-2 overflow-hidden shadow-sm">
             <div
               ref={mapContainerRef}
               className="w-full h-[520px] rounded-xl z-10 bg-[#141f33]"
@@ -332,7 +332,7 @@ export const SafetyMapPage: React.FC = () => {
           {/* Selected Hazard Detail / Quick List Panel */}
           <div className="space-y-4">
             {selectedHazard ? (
-              <Card className="border-teal-200 ring-2 ring-teal-600/10">
+              <Card className="border-teal-500/30 ring-2 ring-teal-600/10">
                 <div className="flex items-start justify-between">
                   <Badge
                     variant={
@@ -352,7 +352,7 @@ export const SafetyMapPage: React.FC = () => {
                   )}
                 </div>
 
-                <h3 className="font-bold text-white dark:text-white text-lg mt-3">{selectedHazard.title}</h3>
+                <h3 className="font-bold text-white  text-lg mt-3">{selectedHazard.title}</h3>
                 <p className="text-xs text-stone-300 uppercase tracking-wider font-semibold mt-1">
                   Category: {selectedHazard.category.replace('-', ' ')}
                 </p>
@@ -364,14 +364,14 @@ export const SafetyMapPage: React.FC = () => {
                 <div className="mt-4 pt-4 border-t border-stone-800 space-y-3">
                   <div className="flex items-center justify-between text-xs text-stone-300">
                     <span>Coordinates:</span>
-                    <span className="font-mono text-stone-100 dark:text-stone-200">
+                    <span className="font-mono text-stone-100 ">
                       {selectedHazard.latitude.toFixed(4)}, {selectedHazard.longitude.toFixed(4)}
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs text-stone-300">
                     <span>Community Confirmations:</span>
-                    <span className="font-bold text-white dark:text-stone-100">{selectedHazard.confirmationCount}</span>
+                    <span className="font-bold text-white ">{selectedHazard.confirmationCount}</span>
                   </div>
 
                   {/* Open Directions externally */}
@@ -396,7 +396,7 @@ export const SafetyMapPage: React.FC = () => {
                   </Button>
 
                   {confirmStatus[selectedHazard.id] && (
-                    <div className="text-xs text-center font-medium text-teal-700">
+                    <div className="text-xs text-center font-medium text-[#00E5BE]">
                       {confirmStatus[selectedHazard.id]}
                     </div>
                   )}
@@ -404,8 +404,8 @@ export const SafetyMapPage: React.FC = () => {
               </Card>
             ) : (
               <Card className="text-center py-12">
-                <MapPin className="w-8 h-8 text-stone-400 dark:text-stone-200 mx-auto mb-3" />
-                <h4 className="font-semibold text-white dark:text-stone-100 text-sm">Select a Hazard Marker</h4>
+                <MapPin className="w-8 h-8 text-stone-400  mx-auto mb-3" />
+                <h4 className="font-semibold text-white  text-sm">Select a Hazard Marker</h4>
                 <p className="text-xs text-stone-300 mt-1 max-w-xs mx-auto">
                   Click any marker on the map to review details, coordinates, and confirm reports.
                 </p>
@@ -413,7 +413,7 @@ export const SafetyMapPage: React.FC = () => {
             )}
 
             {/* Proximity Notice */}
-            <div className="p-4 rounded-2xl bg-teal-50/70 dark:bg-teal-950/40 border border-teal-100 dark:border-teal-900/50 text-xs text-teal-900 dark:text-teal-200 leading-relaxed">
+            <div className="p-4 rounded-2xl bg-teal-50/70 dark:bg-teal-950/40 border border-teal-500/30 dark:border-teal-900/50 text-xs text-teal-900 dark:text-teal-200 leading-relaxed">
               <span className="font-bold">Community Responsibility:</span> Please confirm hazards only if you have
               directly observed them recently. False reports mislead other commuters.
             </div>
@@ -427,7 +427,7 @@ export const SafetyMapPage: React.FC = () => {
               <Card key={h.id} className="flex flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-bold text-white dark:text-white text-base">{h.title}</h3>
+                    <h3 className="font-bold text-white  text-base">{h.title}</h3>
                     <Badge
                       variant={
                         h.status === 'community-confirmed'
@@ -441,7 +441,7 @@ export const SafetyMapPage: React.FC = () => {
                     </Badge>
                   </div>
 
-                  <div className="text-xs text-teal-700 font-semibold mt-1 capitalize">
+                  <div className="text-xs text-[#00E5BE] font-semibold mt-1 capitalize">
                     {h.category.replace('-', ' ')}
                   </div>
 
@@ -450,7 +450,7 @@ export const SafetyMapPage: React.FC = () => {
 
                 <div className="mt-4 pt-3 border-t border-stone-800 flex items-center justify-between">
                   <div className="text-xs text-stone-300">
-                    <span className="font-bold text-stone-100 dark:text-stone-200">{h.confirmationCount}</span> confirmation(s)
+                    <span className="font-bold text-stone-100 ">{h.confirmationCount}</span> confirmation(s)
                   </div>
 
                   <div className="flex items-center gap-2">
@@ -476,7 +476,7 @@ export const SafetyMapPage: React.FC = () => {
                 </div>
 
                 {confirmStatus[h.id] && (
-                  <div className="text-[11px] text-right font-medium text-teal-700 mt-1">
+                  <div className="text-[11px] text-right font-medium text-[#00E5BE] mt-1">
                     {confirmStatus[h.id]}
                   </div>
                 )}

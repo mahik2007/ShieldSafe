@@ -81,8 +81,8 @@ export const NewIncidentPage: React.FC = () => {
           <ArrowLeft className="w-4 h-4" />
         </Button>
         <div>
-          <h1 className="text-2xl font-bold text-white dark:text-white flex items-center gap-2">
-            <FileText className="w-6 h-6 text-teal-700" /> Record Incident Evidence
+          <h1 className="text-2xl font-bold text-white  flex items-center gap-2">
+            <FileText className="w-6 h-6 text-[#00E5BE]" /> Record Incident Evidence
           </h1>
           <p className="text-xs sm:text-sm text-stone-300">
             Create an objective incident record and maintain an organized timeline.
@@ -95,7 +95,7 @@ export const NewIncidentPage: React.FC = () => {
       <Card>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-100  uppercase tracking-wider mb-2">
               Incident Title *
             </label>
             <input
@@ -104,19 +104,19 @@ export const NewIncidentPage: React.FC = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Threatening WhatsApp messages received from unknown number"
-              className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+              className="w-full rounded-xl border border-stone-700  p-3 text-sm text-white  focus:ring-2 focus:ring-teal-600 focus:outline-none"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-bold text-stone-100  uppercase tracking-wider mb-2">
                 Category *
               </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white bg-white dark:bg-[#0e1422] focus:ring-2 focus:ring-teal-600 focus:outline-none"
+                className="w-full rounded-xl border border-stone-700  p-3 text-sm text-white  bg-[#0d1424] focus:ring-2 focus:ring-teal-600 focus:outline-none"
               >
                 <option value="online-harassment">Online Harassment</option>
                 <option value="physical-threat">Physical Threat</option>
@@ -129,20 +129,20 @@ export const NewIncidentPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-bold text-stone-100  uppercase tracking-wider mb-2">
                 Incident Date
               </label>
               <input
                 type="date"
                 value={incidentDate}
                 onChange={(e) => setIncidentDate(e.target.value)}
-                className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none bg-white dark:bg-[#0e1422]"
+                className="w-full rounded-xl border border-stone-700  p-3 text-sm text-white  focus:ring-2 focus:ring-teal-600 focus:outline-none bg-[#0d1424]"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-100  uppercase tracking-wider mb-2">
               Source / Platform
             </label>
             <input
@@ -150,12 +150,12 @@ export const NewIncidentPage: React.FC = () => {
               value={sourceLabel}
               onChange={(e) => setSourceLabel(e.target.value)}
               placeholder="e.g. WhatsApp, Instagram DM, Workplace email, In-person transit"
-              className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3 text-sm text-white dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+              className="w-full rounded-xl border border-stone-700  p-3 text-sm text-white  focus:ring-2 focus:ring-teal-600 focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-stone-100  uppercase tracking-wider mb-2">
               Comprehensive Description *
             </label>
             <textarea
@@ -164,13 +164,13 @@ export const NewIncidentPage: React.FC = () => {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Describe what occurred with facts, sequence of events, and timestamps. Avoid exaggerations."
-              className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-3.5 text-sm text-white dark:text-white focus:ring-2 focus:ring-teal-600 focus:outline-none"
+              className="w-full rounded-xl border border-stone-700  p-3.5 text-sm text-white  focus:ring-2 focus:ring-teal-600 focus:outline-none"
             />
           </div>
 
           {/* Evidence Excerpts */}
           <div className="bg-[#0f172a] p-4 rounded-xl border border-stone-800 space-y-3">
-            <label className="block text-xs font-bold text-stone-100 dark:text-stone-200 uppercase tracking-wider">
+            <label className="block text-xs font-bold text-stone-100  uppercase tracking-wider">
               Specific Message or Evidence Quotes
             </label>
 
@@ -179,7 +179,7 @@ export const NewIncidentPage: React.FC = () => {
                 {evidenceExcerpts.map((ex, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-between p-2.5 rounded-lg bg-white dark:bg-[#0e1422] border border-stone-800 text-xs text-white dark:text-stone-100"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-[#0d1424] border border-stone-800 text-xs text-white "
                   >
                     <span className="font-mono truncate mr-2">"{ex}"</span>
                     <button
@@ -200,7 +200,7 @@ export const NewIncidentPage: React.FC = () => {
                 value={newExcerpt}
                 onChange={(e) => setNewExcerpt(e.target.value)}
                 placeholder="Paste verbatim threat quote..."
-                className="flex-1 rounded-lg border border-stone-700 dark:border-stone-700 p-2 text-xs bg-white dark:bg-[#0e1422] focus:outline-none focus:ring-1 focus:ring-teal-600"
+                className="flex-1 rounded-lg border border-stone-700  p-2 text-xs bg-[#0d1424] focus:outline-none focus:ring-1 focus:ring-teal-600"
               />
               <Button type="button" size="sm" variant="outline" onClick={handleAddExcerpt}>
                 <Plus className="w-3.5 h-3.5 mr-1" /> Add Quote

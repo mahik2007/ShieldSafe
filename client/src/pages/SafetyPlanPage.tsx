@@ -83,11 +83,11 @@ export const SafetyPlanPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-800 shadow-sm print:hidden">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#0d1424] p-5 rounded-2xl border border-stone-800 shadow-sm print:hidden">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-white dark:text-white flex items-center gap-2">
-              <CheckSquare className="w-6 h-6 text-teal-700" /> Safety Action Planner
+            <h1 className="text-2xl font-bold text-white  flex items-center gap-2">
+              <CheckSquare className="w-6 h-6 text-[#00E5BE]" /> Safety Action Planner
             </h1>
             <Badge variant="blue" className="capitalize">
               {mode} Mode
@@ -117,7 +117,7 @@ export const SafetyPlanPage: React.FC = () => {
           <span className="text-xs font-bold uppercase tracking-wider text-stone-200 dark:text-stone-300">
             Checklist Completion Progress
           </span>
-          <span className="text-sm font-extrabold text-teal-700 font-mono">
+          <span className="text-sm font-extrabold text-[#00E5BE] font-mono">
             {completedCount} / {items.length} ({progressPercent}%)
           </span>
         </div>
@@ -145,7 +145,7 @@ export const SafetyPlanPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handleToggle(item)}
-                  className="mt-0.5 text-teal-700 hover:text-teal-900 focus:outline-none cursor-pointer"
+                  className="mt-0.5 text-[#00E5BE] hover:text-teal-300 focus:outline-none cursor-pointer"
                 >
                   {item.completed ? (
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 fill-emerald-50" />
@@ -158,7 +158,7 @@ export const SafetyPlanPage: React.FC = () => {
                   <div className="flex items-center justify-between gap-2">
                     <h3
                       className={`font-bold text-sm ${
-                        item.completed ? 'line-through text-stone-400 dark:text-stone-300' : 'text-white dark:text-white'
+                        item.completed ? 'line-through text-stone-400 dark:text-stone-300' : 'text-white '
                       }`}
                     >
                       {item.title}
@@ -178,7 +178,7 @@ export const SafetyPlanPage: React.FC = () => {
                       value={notes[item.id] || ''}
                       onChange={(e) => setNotes({ ...notes, [item.id]: e.target.value })}
                       onBlur={() => handleNoteBlur(item.id)}
-                      className="w-full text-[11px] bg-white dark:bg-[#0e1422] border border-stone-800 rounded-lg p-2 text-stone-100 dark:text-stone-200 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full text-[11px] bg-[#0d1424] border border-stone-800 rounded-lg p-2 text-stone-100  focus:outline-none focus:ring-1 focus:ring-teal-500"
                     />
                   </div>
                 </div>

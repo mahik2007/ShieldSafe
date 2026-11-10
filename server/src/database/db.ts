@@ -74,6 +74,16 @@ export function initializeDatabase(): void {
   const database = getDb();
 
   database.exec(`
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      password_hash TEXT NOT NULL,
+      safety_mode TEXT NOT NULL DEFAULT 'everyday',
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
     CREATE TABLE IF NOT EXISTS hazards (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       category TEXT NOT NULL,

@@ -7,6 +7,7 @@ import hazardsRouter from './routes/hazards';
 import incidentsRouter from './routes/incidents';
 import journeysRouter from './routes/journeys';
 import toolsRouter from './routes/tools';
+import authRouter from './routes/auth';
 import { errorHandler, notFound } from './middleware/validation';
 
 dotenv.config();
@@ -53,6 +54,7 @@ app.get('/ready', (_req, res) => {
 });
 
 // API Routes
+app.use('/api/auth', authRouter);
 app.use('/api/hazards', hazardsRouter);
 app.use('/api/incidents', incidentsRouter);
 app.use('/api/journeys', journeysRouter);

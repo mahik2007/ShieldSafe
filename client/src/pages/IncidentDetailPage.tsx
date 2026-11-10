@@ -210,7 +210,7 @@ export const IncidentDetailPage: React.FC = () => {
     return (
       <Card className="text-center py-16">
         <AlertTriangle className="w-8 h-8 text-rose-500 mx-auto mb-3" />
-        <h3 className="font-bold text-white dark:text-stone-100">Incident Record Not Found</h3>
+        <h3 className="font-bold text-white ">Incident Record Not Found</h3>
         <p className="text-xs text-stone-300 mt-1">The requested ID does not exist or was deleted.</p>
         <div className="mt-4">
           <Link to="/incidents">
@@ -224,14 +224,14 @@ export const IncidentDetailPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Action Navigation Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#0d1424] p-5 rounded-2xl border border-stone-800">
         <div className="flex items-center gap-3">
           <Button size="sm" variant="outline" onClick={() => navigate('/incidents')} className="p-2">
             <ArrowLeft className="w-4 h-4" />
           </Button>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-semibold text-teal-700">SS-INC-{incident.id}</span>
+              <span className="text-xs font-mono font-semibold text-[#00E5BE]">SS-INC-{incident.id}</span>
               <Badge
                 variant={
                   incident.status === 'open'
@@ -244,7 +244,7 @@ export const IncidentDetailPage: React.FC = () => {
                 {incident.status}
               </Badge>
             </div>
-            <h1 className="text-xl font-bold text-white dark:text-white mt-1">{incident.title}</h1>
+            <h1 className="text-xl font-bold text-white  mt-1">{incident.title}</h1>
           </div>
         </div>
 
@@ -267,17 +267,17 @@ export const IncidentDetailPage: React.FC = () => {
         {/* Left Column: Details & Evidence */}
         <div className="md:col-span-2 space-y-6">
           <Card>
-            <h3 className="text-sm font-bold text-white dark:text-white uppercase tracking-wider mb-3">
+            <h3 className="text-sm font-bold text-white  uppercase tracking-wider mb-3">
               Incident Narrative
             </h3>
-            <p className="text-sm text-stone-100 dark:text-stone-200 leading-relaxed whitespace-pre-line bg-[#0f172a] p-4 rounded-xl border border-stone-800">
+            <p className="text-sm text-stone-100  leading-relaxed whitespace-pre-line bg-[#0f172a] p-4 rounded-xl border border-stone-800">
               {incident.description}
             </p>
 
             {/* Documented Evidence Excerpts */}
             {incident.evidenceExcerpts && incident.evidenceExcerpts.length > 0 && (
               <div className="mt-6 pt-6 border-t border-stone-800">
-                <h4 className="text-xs font-bold text-white dark:text-stone-100 uppercase tracking-wider mb-3">
+                <h4 className="text-xs font-bold text-white  uppercase tracking-wider mb-3">
                   Documented Evidence Excerpts ({incident.evidenceExcerpts.length})
                 </h4>
                 <div className="space-y-2">
@@ -297,8 +297,8 @@ export const IncidentDetailPage: React.FC = () => {
           {/* Chronological Action Timeline */}
           <Card>
             <div className="flex items-center gap-2 pb-4 border-b border-stone-800 mb-4">
-              <Clock className="w-4 h-4 text-teal-700" />
-              <h3 className="text-sm font-bold text-white dark:text-white uppercase tracking-wider">
+              <Clock className="w-4 h-4 text-[#00E5BE]" />
+              <h3 className="text-sm font-bold text-white  uppercase tracking-wider">
                 Chronological Timeline & Actions Taken
               </h3>
             </div>
@@ -306,12 +306,12 @@ export const IncidentDetailPage: React.FC = () => {
             {incident.notes && incident.notes.length > 0 ? (
               <div className="space-y-4 mb-6">
                 {incident.notes.map((note) => (
-                  <div key={note.id} className="relative pl-6 pb-2 border-l-2 border-teal-200">
+                  <div key={note.id} className="relative pl-6 pb-2 border-l-2 border-teal-500/30">
                     <div className="absolute -left-[7px] top-0 w-3 h-3 rounded-full bg-teal-700" />
                     <div className="text-[11px] font-semibold text-stone-400 dark:text-stone-300">
                       {new Date(note.createdAt).toLocaleString()}
                     </div>
-                    <p className="text-xs text-stone-100 dark:text-stone-200 mt-1 leading-relaxed bg-[#0f172a] p-3 rounded-xl border border-stone-800">
+                    <p className="text-xs text-stone-100  mt-1 leading-relaxed bg-[#0f172a] p-3 rounded-xl border border-stone-800">
                       {note.content}
                     </p>
                   </div>
@@ -323,7 +323,7 @@ export const IncidentDetailPage: React.FC = () => {
 
             {/* Add Note Form */}
             <form onSubmit={handleAddNote} className="space-y-3 pt-4 border-t border-stone-800">
-              <label className="block text-xs font-semibold text-stone-100 dark:text-stone-200">
+              <label className="block text-xs font-semibold text-stone-100 ">
                 Log New Follow-up Note or Action Taken
               </label>
               <textarea
@@ -332,7 +332,7 @@ export const IncidentDetailPage: React.FC = () => {
                 value={noteContent}
                 onChange={(e) => setNoteContent(e.target.value)}
                 placeholder="e.g. Blocked user on WhatsApp, filed cybercrime report ref #10948, spoke with college counselor."
-                className="w-full rounded-xl border border-stone-700 dark:border-stone-700 p-2.5 text-xs text-white dark:text-white focus:outline-none focus:ring-1 focus:ring-teal-600"
+                className="w-full rounded-xl border border-stone-700  p-2.5 text-xs text-white  focus:outline-none focus:ring-1 focus:ring-teal-600"
               />
               <div className="flex justify-end">
                 <Button size="sm" type="submit" isLoading={submittingNote}>
@@ -346,50 +346,50 @@ export const IncidentDetailPage: React.FC = () => {
         {/* Right Column: Metadata Sidebar */}
         <div className="space-y-6">
           <Card className="space-y-4 text-xs">
-            <h3 className="font-bold text-white dark:text-white uppercase tracking-wider text-xs border-b border-stone-800 pb-2">
+            <h3 className="font-bold text-white  uppercase tracking-wider text-xs border-b border-stone-800 pb-2">
               Record Metadata
             </h3>
 
             <div>
               <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Category</span>
-              <span className="font-semibold text-white dark:text-stone-100 capitalize">
+              <span className="font-semibold text-white  capitalize">
                 {incident.category.replace('-', ' ')}
               </span>
             </div>
 
             <div>
               <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Incident Date</span>
-              <span className="font-semibold text-white dark:text-stone-100">
+              <span className="font-semibold text-white ">
                 {incident.incidentDate || 'Not specified'}
               </span>
             </div>
 
             <div>
               <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Source / Platform</span>
-              <span className="font-semibold text-white dark:text-stone-100">
+              <span className="font-semibold text-white ">
                 {incident.sourceLabel || 'Direct user input'}
               </span>
             </div>
 
             <div>
               <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Created In ShieldSafe</span>
-              <span className="font-semibold text-white dark:text-stone-100">
+              <span className="font-semibold text-white ">
                 {new Date(incident.createdAt).toLocaleDateString()}
               </span>
             </div>
 
             <div>
               <span className="text-stone-400 dark:text-stone-300 block mb-0.5">Last Updated</span>
-              <span className="font-semibold text-white dark:text-stone-100">
+              <span className="font-semibold text-white ">
                 {new Date(incident.updatedAt).toLocaleDateString()}
               </span>
             </div>
           </Card>
 
           {/* Legal Advisory Notice */}
-          <div className="p-4 rounded-2xl bg-teal-50/60 border border-teal-100 text-xs text-indigo-950 space-y-2">
+          <div className="p-4 rounded-2xl bg-teal-950/40 border border-teal-500/30 text-xs text-teal-200 space-y-2">
             <div className="font-bold flex items-center gap-1.5 text-indigo-900">
-              <ShieldAlert className="w-4 h-4 text-teal-700" /> Preservation Advice:
+              <ShieldAlert className="w-4 h-4 text-[#00E5BE]" /> Preservation Advice:
             </div>
             <p className="text-[11px] leading-relaxed text-indigo-900/80">
               Preserve original screenshots, email headers, or chat exports on an external drive.

@@ -110,7 +110,7 @@ export const AboutPage: React.FC = () => {
       {/* Tech Stack Breakdown */}
       <Card className="space-y-4">
         <h2 className="text-lg font-bold text-white flex items-center gap-2">
-          <Code className="w-5 h-5 text-teal-700" /> Technology Stack
+          <Code className="w-5 h-5 text-[#00E5BE]" /> Technology Stack
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
           <div className="p-3 rounded-xl bg-[#0f172a] border border-stone-800">

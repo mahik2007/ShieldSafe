@@ -82,7 +82,7 @@ export const DashboardPage: React.FC = () => {
       {/* Welcome & Profile Header */}
       <div className="bg-gradient-to-r from-teal-900 via-teal-800 to-teal-950 rounded-3xl p-6 sm:p-8 text-white shadow-brand relative overflow-hidden ring-1 ring-teal-700/30">
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0d1424] dark:bg-[#0e1422]/10 text-teal-200 text-xs font-semibold backdrop-blur-sm border border-white/10 mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0d1424] text-teal-200 text-xs font-semibold backdrop-blur-sm border border-teal-500/30 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             {currentHeader.badge}
           </div>
@@ -99,13 +99,13 @@ export const DashboardPage: React.FC = () => {
       {activeJourney && (
         <div className="bg-[#1a1508] border-2 border-amber-500/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg shadow-amber-950/40">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500 text-stone-950 flex items-center justify-center shrink-0 shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-amber-950/400 text-stone-950 flex items-center justify-center shrink-0 shadow-md">
               <Navigation className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-white text-sm sm:text-base tracking-tight">Active Journey In Progress</span>
-                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/50">
+                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-950/400/20 text-amber-300 border border-amber-500/50">
                   Check-in Active
                 </span>
               </div>
@@ -126,7 +126,7 @@ export const DashboardPage: React.FC = () => {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <Link to="/analyze">
           <Card className="hover:border-teal-300 hover:shadow-brand transition-all cursor-pointer h-full flex flex-col justify-between p-5 card-hover">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 border border-amber-100 flex items-center justify-center mb-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-950/400/20 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-3">
               <MessageSquareWarning className="w-5 h-5" />
             </div>
             <div>
@@ -138,7 +138,7 @@ export const DashboardPage: React.FC = () => {
 
         <Link to="/map">
           <Card className="hover:border-teal-300 hover:shadow-brand transition-all cursor-pointer h-full flex flex-col justify-between p-5 card-hover">
-            <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#00E5BE] border border-teal-100 flex items-center justify-center mb-3">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-[#00E5BE] border border-teal-500/30 flex items-center justify-center mb-3">
               <MapPin className="w-5 h-5" />
             </div>
             <div>
@@ -150,7 +150,7 @@ export const DashboardPage: React.FC = () => {
 
         <Link to="/report-hazard">
           <Card className="hover:border-teal-300 hover:shadow-brand transition-all cursor-pointer h-full flex flex-col justify-between p-5 card-hover">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 border border-amber-100 flex items-center justify-center mb-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-950/400/20 text-amber-400 border border-amber-500/30 flex items-center justify-center mb-3">
               <AlertTriangle className="w-5 h-5" />
             </div>
             <div>
@@ -162,7 +162,7 @@ export const DashboardPage: React.FC = () => {
 
         <Link to="/journey">
           <Card className="hover:border-teal-300 hover:shadow-brand transition-all cursor-pointer h-full flex flex-col justify-between p-5 card-hover">
-            <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#00E5BE] border border-teal-100 flex items-center justify-center mb-3">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-[#00E5BE] border border-teal-500/30 flex items-center justify-center mb-3">
               <Navigation className="w-5 h-5" />
             </div>
             <div>
@@ -175,25 +175,25 @@ export const DashboardPage: React.FC = () => {
 
       {/* Overview Stats Bar */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-[#0d1424] dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
+        <div className="bg-[#0d1424] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-300 uppercase tracking-wider">Logged Hazards</div>
           <div className="text-2xl font-black text-white mt-1">{stats.totalHazards}</div>
           <div className="text-[11px] text-stone-300 mt-1">Open public reports</div>
         </div>
 
-        <div className="bg-[#0d1424] dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
+        <div className="bg-[#0d1424] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-300 uppercase tracking-wider">Saved Incidents</div>
           <div className="text-2xl font-black text-white mt-1">{stats.totalIncidents}</div>
           <div className="text-[11px] text-stone-300 mt-1">Preserved timelines</div>
         </div>
 
-        <div className="bg-[#0d1424] dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
+        <div className="bg-[#0d1424] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-300 uppercase tracking-wider">Active Trips</div>
           <div className="text-2xl font-black text-white mt-1">{stats.activeJourneys}</div>
           <div className="text-[11px] text-stone-300 mt-1">Journey Guardian sessions</div>
         </div>
 
-        <div className="bg-[#0d1424] dark:bg-[#0e1422] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
+        <div className="bg-[#0d1424] p-5 rounded-2xl border border-stone-800 shadow-card ring-1 ring-black/5">
           <div className="text-xs font-semibold text-stone-300 uppercase tracking-wider">Checklist Progress</div>
           <div className="text-2xl font-black text-[#00E5BE] mt-1">{stats.checklistProgress.percentage}%</div>
           <div className="text-[11px] text-stone-300 mt-1">{stats.checklistProgress.completed} of {stats.checklistProgress.total} completed</div>
@@ -210,7 +210,7 @@ export const DashboardPage: React.FC = () => {
                 <MapPin className="w-5 h-5 text-[#00E5BE]" />
                 <h3 className="font-bold text-white">Recent Community Hazards</h3>
               </div>
-              <Link to="/map" className="text-xs font-semibold text-[#00E5BE] hover:text-teal-900 transition-colors">
+              <Link to="/map" className="text-xs font-semibold text-[#00E5BE] hover:text-teal-300 transition-colors">
                 View Full Map →
               </Link>
             </div>
@@ -264,7 +264,7 @@ export const DashboardPage: React.FC = () => {
                 <FileText className="w-5 h-5 text-[#00E5BE]" />
                 <h3 className="font-bold text-white">Incident Documentation Logs</h3>
               </div>
-              <Link to="/incidents" className="text-xs font-semibold text-[#00E5BE] hover:text-teal-900 transition-colors">
+              <Link to="/incidents" className="text-xs font-semibold text-[#00E5BE] hover:text-teal-300 transition-colors">
                 View All →
               </Link>
             </div>
@@ -277,7 +277,7 @@ export const DashboardPage: React.FC = () => {
               <div className="space-y-3">
                 {recentIncidents.map((inc) => (
                   <Link key={inc.id} to={`/incidents/${inc.id}`}>
-                    <div className="p-3.5 rounded-xl border border-stone-800 bg-[#0f172a]/60 hover:bg-[#0f172a] hover:border-teal-200 transition-all cursor-pointer mb-2">
+                    <div className="p-3.5 rounded-xl border border-stone-800 bg-[#0f172a]/60 hover:bg-[#0f172a] hover:border-teal-500/30 transition-all cursor-pointer mb-2">
                       <div className="flex items-start justify-between gap-2">
                         <h4 className="font-semibold text-white text-xs sm:text-sm">{inc.title}</h4>
                         <Badge

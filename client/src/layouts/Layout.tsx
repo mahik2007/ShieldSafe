@@ -13,13 +13,16 @@ import {
   X,
   UserCheck,
   ChevronRight,
+  LogOut,
 } from 'lucide-react';
 import { useSafetyMode } from '../hooks/useSafetyMode';
+import { useAuth } from '../hooks/useAuth';
 import { Logo } from '../components/Logo';
 
 export const Layout: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { mode, setMode } = useSafetyMode();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -93,6 +96,23 @@ export const Layout: React.FC = () => {
             >
               <Info className="w-4 h-4" />
             </Link>
+
+            {/* User Session & Logout */}
+            <div className="flex items-center gap-2 pl-2 border-l border-stone-800">
+              <span className="text-xs font-semibold text-stone-300 max-w-[120px] truncate" title={user?.name || user?.email}>
+                {user?.name || 'User'}
+              </span>
+              <button
+                onClick={() => {
+                  logout();
+                  navigate('/');
+                }}
+                className="p-2 text-stone-400 hover:text-rose-400 rounded-xl hover:bg-stone-800 transition-colors cursor-pointer"
+                title="Log Out"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Mobile hamburger */}
