@@ -440,10 +440,10 @@ export const LandingPage: React.FC = () => {
 
           {/* Sub navigation links */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-stone-400 border-t border-stone-800/40">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-white">SHEcurity</span>
-              <span className="text-stone-700">•</span>
-              <span>ShieldSafe Autonomous Protection Platform</span>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+              <span className="font-mono text-[11px] text-stone-400 uppercase tracking-wider">&copy; 2026 SHIELDSAFE. ALL RIGHTS RESERVED.</span>
+              <span className="hidden sm:inline text-stone-700">•</span>
+              <span className="text-stone-400">Autonomous Protection & Evidence Platform</span>
             </div>
             <div className="flex items-center gap-5">
               <Link to="/about" className="hover:text-[#00E5BE] transition-colors">About & Architecture</Link>

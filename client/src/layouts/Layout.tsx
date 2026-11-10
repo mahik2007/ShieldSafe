@@ -302,9 +302,9 @@ export const Layout: React.FC = () => {
       <footer className="mt-auto bg-[#050810] border-t border-stone-800/80 py-8 text-xs text-stone-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-            <span className="font-bold text-white">ShieldSafe</span>
+            <span className="font-mono text-[11px] text-stone-300 uppercase tracking-wider">&copy; 2026 SHIELDSAFE. ALL RIGHTS RESERVED.</span>
             <span className="hidden sm:inline text-stone-700">•</span>
-            <span>Local-first AI & Community Safety Platform. Zero paid API lock-in, zero cloud surveillance.</span>
+            <span>Local-first AI & Community Safety Platform. Zero cloud surveillance.</span>
           </div>
           <div className="flex items-center gap-5">
             <Link to="/privacy" className="hover:text-[#00E5BE] transition-colors font-medium">Privacy Architecture</Link>
